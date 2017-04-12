@@ -24,7 +24,7 @@ class SPDO
      * @see     PDO::__construct()
      */
     protected function __construct(){
-        $this->$PDOInstance = new PDO('mysql:dbname='. self::BDD_NAME .';host'. self::HOST, self::USERNAME, self::PASSWORD);
+        $this->$PDOInstance = new PDO('mysql:dbname='. self::$bddName .';host'. self::$host, self::$username, self::$password);
     }
 
     /**

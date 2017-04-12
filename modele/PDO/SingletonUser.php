@@ -17,10 +17,10 @@ class SingletonUser extends SPDO
 
         $password  = 'user';
 
-        $this->$PDOInstance = new PDO('mysql:dbname='. self::BDD_NAME .';host'. self::HOST, self::USERNAME, self::PASSWORD);
+        parent::__construct();
     }
 
-    
+
 
 }
 

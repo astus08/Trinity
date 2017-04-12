@@ -17,9 +17,9 @@ class SingletonAdmin extends SPDO
 
         $password  = 'dev';
 
-        $this->$PDOInstance = new PDO('mysql:dbname='. self::BDD_NAME .';host'. self::HOST, self::USERNAME, self::PASSWORD);
+        parent::__construct();
     }
-    
+
 }
 
 ?>
