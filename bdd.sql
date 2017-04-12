@@ -9,11 +9,11 @@
 
 CREATE TABLE users(
         id_user   int (11) Auto_increment  NOT NULL ,
-        lastName  Varchar ,
-        firstName Varchar ,
-        avatar    Varchar ,
-        email     Varchar (25) NOT NULL ,
-        pwd       Varchar NOT NULL ,
+        lastName  Varchar (255) ,
+        firstName Varchar (255) ,
+        avatar    Varchar (255) ,
+        email     Varchar (255) NOT NULL ,
+        pwd       Varchar (255) NOT NULL ,
         birthDate Datetime ,
         id_roles  Int ,
         PRIMARY KEY (id_user )
@@ -26,7 +26,7 @@ CREATE TABLE users(
 
 CREATE TABLE roles(
         id_roles int (11) Auto_increment  NOT NULL ,
-        roleName Varchar (25) NOT NULL ,
+        roleName Varchar (255) NOT NULL ,
         PRIMARY KEY (id_roles )
 )ENGINE=InnoDB;
 
