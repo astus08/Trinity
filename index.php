@@ -1,18 +1,12 @@
-<!DOCTYPE HTML>
-<html lang="fr">
+<?php
 
-    <head>
-        <meta charset="utf-8">
-        <title>Trinity</title>
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
+$router = new router($_GET['url']);
 
-    <body>
-        <h1>Salut les noobs</h1>
-        <p>Salut</p>
-        <p>ok</p>
+$router->get('/activity', function(){
+    echo "les activitées";
+});
 
-    </body>
+$router->get('/activity/:id', function($id){
+    echo "activitées ".$id;
+});
 
-    <script type="text/javascript" src="js/app.js"></script>
-</html>
