@@ -2,7 +2,7 @@
 
 namespace modele\PDO;
 
-class SPDO
+abstract class SPDO
 {
     protected $PDOInstance = null;
 
