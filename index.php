@@ -9,6 +9,7 @@
 
     <body>
         <p>Salut</p>
+        <p>ok</p>
     </body>
 
     <script type="text/javascript" src="js/app.js"></script>
