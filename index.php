@@ -1,6 +1,6 @@
 <?php
 
-include 'router.php';
+include 'controler/router/router.php';
 
 $router = new Router($_GET['url']);
 
