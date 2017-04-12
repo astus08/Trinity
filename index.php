@@ -8,7 +8,9 @@
     </head>
 
     <body>
+        <h1>Salut les noobs</h1>
         <p>Salut</p>
+        
     </body>
 
     <script type="text/javascript" src="js/app.js"></script>
