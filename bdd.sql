@@ -13,7 +13,7 @@ CREATE TABLE users(
         firstName Varchar ,
         avatar    Varchar ,
         email     Varchar (25) NOT NULL ,
-        password  Varchar NOT NULL ,
+        pwd       Varchar NOT NULL ,
         birthDate Datetime ,
         id_roles  Int ,
         PRIMARY KEY (id_user ) ,

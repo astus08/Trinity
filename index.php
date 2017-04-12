@@ -15,7 +15,7 @@ $router->get('/activity', function(){
 
 $router->get('/activity/:id-:slug', function($id, $slug){
     echo "activitées ".$id;
-})->with('id', '[0-9]+')->with('slug', '[a-zA-Z]+');
+})->with('id', '[0-9]+')->with('slug', '[a-z\-0-9]+');
 
 $router->post('/activity/:id', function($id){
     echo "activitées ".$id;
