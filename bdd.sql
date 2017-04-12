@@ -16,8 +16,7 @@ CREATE TABLE users(
         pwd       Varchar NOT NULL ,
         birthDate Datetime ,
         id_roles  Int ,
-        PRIMARY KEY (id_user ) ,
-        UNIQUE (email )
+        PRIMARY KEY (id_user )
 )ENGINE=InnoDB;
 
 
