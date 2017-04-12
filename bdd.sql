@@ -9,7 +9,7 @@
 
 CREATE TABLE users(
         id_user   int (11) Auto_increment  NOT NULL ,
-        name      Varchar ,
+        lastName  Varchar ,
         firstName Varchar ,
         avatar    Varchar ,
         email     Varchar (25) NOT NULL ,
@@ -27,7 +27,7 @@ CREATE TABLE users(
 
 CREATE TABLE roles(
         id_roles int (11) Auto_increment  NOT NULL ,
-        name     Varchar (25) NOT NULL ,
+        roleName Varchar (25) NOT NULL ,
         PRIMARY KEY (id_roles )
 )ENGINE=InnoDB;
 
@@ -38,12 +38,12 @@ CREATE TABLE roles(
 
 CREATE TABLE activities(
         id_activity  int (11) Auto_increment  NOT NULL ,
-        name         Char (25) ,
+        lastName     Varchar (25) ,
         description  Text ,
         dateActivity Datetime ,
         reccurence   Int ,
         prix         Int ,
-        vote_enable  Bool ,
+        vote_enable  Int NOT NULL ,
         place        Varchar (25) ,
         PRIMARY KEY (id_activity )
 )ENGINE=InnoDB;
@@ -150,8 +150,8 @@ CREATE TABLE products(
 #------------------------------------------------------------
 
 CREATE TABLE category(
-        id_category int (11) Auto_increment  NOT NULL ,
-        name        Varchar (25) ,
+        id_category  int (11) Auto_increment  NOT NULL ,
+        categoryName Varchar (25) ,
         PRIMARY KEY (id_category )
 )ENGINE=InnoDB;
 
