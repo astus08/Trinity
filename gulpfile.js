@@ -4,8 +4,8 @@ $               = require('gulp-load-plugins')();
 browserSync     = require('browser-sync').create();
 
 var path = {
-    css     : 'css/',
-    scss    : 'css/'
+    css     : 'view/css/',
+    scss    : 'view/css/'
 }
 
 gulp.task('browser_reload', function(done) {
