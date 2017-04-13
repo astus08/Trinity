@@ -4,8 +4,8 @@ $               = require('gulp-load-plugins')();
 browserSync     = require('browser-sync').create();
 
 var path = {
-    css     : 'view/css/',
-    scss    : 'view/css/'
+    css     : 'css/',
+    scss    : 'css/'
 }
 
 gulp.task('browser_reload', function(done) {
@@ -28,5 +28,5 @@ gulp.task('default', function(){
 
     gulp.watch(path.scss + '**/*.scss', ['sass_compilation_+_prefixer']);
 
-    gulp.watch(['*.html', 'js/*.js', '*.php', 'view/css/*.css'], ['browser_reload']);
+    gulp.watch(['*.html', 'js/*.js', 'view/*.php', 'view/css/*.css'], ['browser_reload']);
 })

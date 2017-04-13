@@ -1,22 +1,34 @@
-<?php
 
-if (isset($idArticle)) {
-	echo $idArticle;
-}
 
-?>
+<!DOCTYPE HTML>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>Affichage article</title>
+        <link rel="stylesheet" href="/trinity/view/css/style.css"/>
+	</head>
+	<body>
+		<header>Title</header>
+        <section class="content">
 
-<!DOCTYPE html>
-<html>
-<head>
-	<title>activities</title>
-</head>
-<body>
+			<?php
+			if (isset($idArticle)){
+				// ctrl->article(id)
+				?>
 
-<form method="POST" action="Activity_Controller.php">
-	<input type="text" name="test">
-	<input type="submit" name="btn">
-</form>
+				<?php
+			} else { ?>
+				<ul class="grid">
+					<li class="card"></li>
+				</ul>
+			<?php
+			}?>
+        </section>
 
-</body>
+		<form method="POST" action="Activity_Controller.php">
+			<input type="text" name="test">
+			<input type="submit" name="btn">
+		</form>
+
+	</body>
 </html>

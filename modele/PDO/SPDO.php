@@ -2,19 +2,21 @@
 
 namespace modele\PDO;
 
-abstract class SPDO
+use \PDO;
+
+class SPDO
 {
-    protected $PDOInstance = null;
+    private $PDOInstance = null;
 
-    protected static $instance = null;
+    private static $instance = null;
 
-    protected $username  = null;
+    const USERNAME  = 'dev';
 
-    protected $password  = null;
+    const PASSWORD  = 'dev';
 
-    protected $host      = 'localhost';
+    const HOSTNAME  = 'localhost';
 
-    protected $bddName   = "Trinity";
+    const BDDNAME   = "Trinity";
 
     /**
      * Constructor
@@ -23,8 +25,8 @@ abstract class SPDO
      * @return  void
      * @see     PDO::__construct()
      */
-    protected function __construct(){
-        $this->$PDOInstance = new PDO('mysql:dbname='. self::$bddName .';host'. self::$host, self::$username, self::$password);
+    private function __construct(){
+        $this->PDOInstance = new PDO('mysql:dbname='. self::BDDNAME .';host'. self::HOSTNAME, self::USERNAME, self::PASSWORD);
     }
 
     /**
@@ -34,8 +36,8 @@ abstract class SPDO
      * @return  $instance
      */
     public static function getInstance(){
-        if(is_null(self::instance)){
-            self::$instance = new SingletonAdmin();
+        if(is_null(self::$instance)){
+            self::$instance = new SPDO();
         }
 
         return self::$instance;

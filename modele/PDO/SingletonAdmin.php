@@ -1,6 +1,8 @@
 <?php
 namespace modele\PDO;
 
+require 'SPDO.php';
+
 class SingletonAdmin extends SPDO
 {
 

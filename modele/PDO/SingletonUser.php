@@ -1,6 +1,8 @@
 <?php
 namespace modele\PDO;
 
+require 'SPDO.php';
+
 class SingletonUser extends SPDO
 {
 
