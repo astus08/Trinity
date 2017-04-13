@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE HTML>
 <html lang="fr">
     <head>
@@ -7,31 +5,40 @@
         <title>Affichage article</title>
         <link rel="stylesheet" href="/trinity/view/css/style.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
 	</head>
 	<body  ng-app="myApp">
-		<header>Title</header>
+		<header class="title">Title</header>
         <section class="content">
 
 			<?php
-			if (isset($idArticle)){
-				// ctrl->article(id)
+			if (isset($_GET['id'])){
+				$id = $_GET['id'];
+				echo $id;
 				?>
-
-				<?php
+			<?php
 			} else { ?>
-			salut
-				<ul class="grid" ng-controller="activitiesCtrl">
-					<li class="card" ng-repeat="activity in activities">{{activity.lastName}}
+				<ul class="grid" ng-controller="activitiesCtrlAll">
+					<li class="card" ng-repeat="activity in activities">
+						<a href="activities.php?id={{activity.id_activity}}">
+							<header>
+								<div class="tile-title">{{activity.lastName}}</div>
+							</header>
+							<article>
+								<span class="tile-description">{{activity.description}}</span>
+							</article>
+							<footer>
+								<div class="date"><span class="tile-nextDate">{{activity.dateActivity}}</span></div>
+								<div class="price"><span class="tile-price">{{activity.prix}} €</span></div>
+							</footer>
+								
+
+						</a>
 					</li>
 				</ul>
 			<?php
 			}?>
         </section>
-
-		<form method="POST" action="Activity_Controller.php">
-			<input type="text" name="test">
-			<input type="submit" name="btn">
-		</form>
 
 	</body>
     <script type="text/javascript" src="/trinity/view/js/app.js"></script>

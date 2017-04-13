@@ -1,23 +1,40 @@
 $backgroundColor: #8A1002;
-$heightHeader: 50px;
+$color2: #C2242A;
+$heightHeader: 80px;
 
 
-$tileSize: 200px;
-$tileMargin: 20px;
-$tilePerLine: 4;
+$tileWidth:     200px;
+$tileHeight:    400px;
+$tileBorder:    2px;
+$tilePadding:   5px;
+$tileMargin:    20px;
+$tilePerLine:   4;
+
+* {
+	font-family: Roboto;
+}
+
+a { 
+    text-decoration:none;
+    color: #000;
+} 
 
 body{
     margin: 0;
     padding: 0;
 }
 
-header {
+header.title {
     background-color: $backgroundColor;
     height: $heightHeader;
+
+    font-size: 200%;
+
+    color: #fff;
 }
 
 .content{
-    max-width: ($tileSize + $tileMargin*2)*$tilePerLine;
+    max-width: ($tileWidth + ($tileMargin + $tileBorder + $tilePadding)*2)*$tilePerLine;
     margin: auto;
 }
 
@@ -29,13 +46,73 @@ header {
     justify-content: center;
 
     padding: 0;
+    
 
     .card{
-        width: $tileSize;
-        height: $tileSize;
+        width: $tileWidth;
+        height: $tileHeight;
         margin: $tileMargin;
 
-        background-color: tomato;
+        cursor: pointer;
+
+        border: $tileBorder solid $color2;
+        border-radius: 40px;
+        background-color: #fff;
+
+        transition: all 200ms ease-in-out;
+
+        padding-left: $tilePadding;
+        padding-right: $tilePadding;
+
+        &:hover {
+            background-color: lighten($backgroundColor, 10%);
+            transform: scale(1.1);
+        }
+
+        header {
+            height: 20%;
+
+            .tile-title {
+                height: 40px;
+                width: 100%;
+
+                font-size: 150%;
+
+                margin-top: 10px;
+
+                text-align: center;
+
+            }
+        }
+
+        article{
+            height: 60%;
+
+            text-align: center;
+        }
+
+        footer {
+            height: 20%;
+
+            .date{
+                float: left;
+                width: 60%;
+
+                text-align: center;
+            }
+
+            .price{
+                float: right;
+                width: 40%;
+
+                text-align: center;
+            }
+        }
+
     }
 
+}
+
+.display-none {
+    display: none;
 }
