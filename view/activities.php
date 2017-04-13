@@ -6,8 +6,9 @@
         <meta charset="utf-8">
         <title>Affichage article</title>
         <link rel="stylesheet" href="/trinity/view/css/style.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	</head>
-	<body>
+	<body  ng-app="myApp">
 		<header>Title</header>
         <section class="content">
 
@@ -18,8 +19,10 @@
 
 				<?php
 			} else { ?>
-				<ul class="grid">
-					<li class="card"></li>
+			salut
+				<ul class="grid" ng-controller="activitiesCtrl">
+					<li class="card" ng-repeat="activity in activities">{{activity.lastName}}
+					</li>
 				</ul>
 			<?php
 			}?>
@@ -31,4 +34,5 @@
 		</form>
 
 	</body>
+    <script type="text/javascript" src="/trinity/view/js/app.js"></script>
 </html>
