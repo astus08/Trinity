@@ -8,7 +8,7 @@ if (isset($_GET['url'])) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-	if ($url[0] == '') {
+	if ($url == '') {
 		require 'view/home.php';
 	}
 	/* ----------- ACTIVITE -------------- */
