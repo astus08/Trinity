@@ -10,9 +10,9 @@ class SPDO
 
     private static $instance = null;
 
-    const USERNAME  = 'dev';
+    const USERNAME  = 'root';
 
-    const PASSWORD  = 'dev';
+    const PASSWORD  = '';
 
     const HOSTNAME  = 'localhost';
 
@@ -52,6 +52,28 @@ class SPDO
     public function query($query){
         return $this->PDOInstance->query($query);
     }
+
+    /**
+     * Return user informations for connexion
+     * @param type $data forumlaire data 
+     * @return array
+     */
+    public function connexion($data){
+        $req = $this->PDOInstance->prepare("SELECT * FROM users WHERE email = ?");
+        $req->execute(array($data['mail']));
+        $tmp = $req->fetchAll();
+        return $tmp[0];
+    }
+
+    public function inscription($data){
+        // INSERT INTO users(id_user, lastName, firstName, avatar, email, pwd, birthDate, id_roles) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
+        $req = $this->PDOInstance->prepare("INSERT INTO users(lastName, firstName, avatar, email, pwd) VALUES (?,?,".'view/img/avatar/default.png'.",?,?)");
+        $tmp = $req-execute(array($data['lastName'],$data['firstName'],$data['email'],$data['password']));
+
+        return $tmp;
+
+    }
+
 }
 
 ?>
