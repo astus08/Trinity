@@ -65,13 +65,30 @@ class SPDO
         return $tmp[0];
     }
 
+    
+    /**
+     * Insert a user into the table
+     * @param type $data forumlaire data 
+     * @return bool
+     */
     public function inscription($data){
         // INSERT INTO users(id_user, lastName, firstName, avatar, email, pwd, birthDate, id_roles) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
         $req = $this->PDOInstance->prepare("INSERT INTO users(lastName, firstName, avatar, email, pwd) VALUES (?,?,".'view/img/avatar/default.png'.",?,?)");
         $tmp = $req-execute(array($data['lastName'],$data['firstName'],$data['email'],$data['password']));
 
         return $tmp;
+    }
 
+    /**
+     * Return the information about the activity
+     * @param id of the article
+     * @return array
+     */
+    public function getArticle($id){
+        $req = $this->PDOInstance->prepare("SELECT * FROM activities WHERE id_activity = ?");
+        $req->execute(array($id));
+        $tmp = $req->fetchAll();
+        return $tmp;
     }
 
 }

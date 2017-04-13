@@ -10,9 +10,10 @@ if (isset($_GET['action'])){
             articles();
             break;
     }
-} else {
-    
+} else if (isset($_GET['id'])){
+    article($_GET['id']);
 }
+
 
 function articles(){
 
@@ -28,11 +29,11 @@ function articles(){
 }
 
 function article($id){
-    foreach (SPDO::getInstance()->query('   SELECT *
-                                            FROM activities
-                                            WHERE id = '.$id) as $line){
-        $rows[] = array_map('utf8_encode', $line);
-    }
+    $tmp = SPDO::getInstance()->getArticle($id);
+
+    echo json_encode($tmp);
+
+    var_dump($tmp);
 }
 
 

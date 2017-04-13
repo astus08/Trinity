@@ -16,9 +16,12 @@
 				$id = $_GET['id'];
 				echo $id;
 				?>
+				<article class="presentation" ng-controller="activityCtrl" ng-init="init('<?php echo $id; ?>')">
+					{{activity.lastName}}
+				</article>
 			<?php
 			} else { ?>
-				<ul class="grid" ng-controller="activitiesCtrlAll">
+				<ul class="grid" ng-controller="activitiesCtrl">
 					<li class="card" ng-repeat="activity in activities">
 						<a href="activities.php?id={{activity.id_activity}}">
 							<header>
