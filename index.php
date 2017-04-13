@@ -1,28 +1,33 @@
 <?php
 
-include 'controler/router/router.php';
+$url = '';
 
-$router = new Router($_GET['url']);
+if (isset($_GET['url'])) {
+	$url = explode('/', $_GET['url']);
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+
+	if ($url[0] == '') {
+		require 'view/home.php';
+	}
+	/* ----------- ACTIVITE -------------- */
+	elseif ($url[0] == 'activities' && !empty($url[1])) {
+		$idArticle = $url[1];
+		require 'view\activities.php';
+	}
+	elseif ($url[0] == 'activities') {
+		require 'view\activities.php';
+	}
+	/* ---------- SUGGESTION ------------- */
+	elseif ($url[0] == 'suggestions') {
+		require 'view\suggestions.php';
+	}
+
+}
+elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	require 'controller\\'.$url[0];
+}
 
 
-$router->get('/', function(){
-    echo "home page";
-});
-
-$router->get('/activity', function(){
-    echo "les activitées";
-});
-
-$router->get('/activity/:id', function($id){
-    echo "activitées ".$id;
-})->with('id', '[0-9]+');
-
-$router->get('/activity/:id-:slug', function($id, $slug){
-    echo "activitées ".$id."AND ".$slug;
-})->with('id', '[0-9]+')->with('slug', '([a-z\-0-9]+)');
-
-$router->post('/activity/:id', function($id){
-    echo "activitées ".$id;
-});
-
-$router->run();
+?>
