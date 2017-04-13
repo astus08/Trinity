@@ -9,13 +9,18 @@ if (isset($_POST['lastName']) && isset($_POST['firstName']) && isset($_POST['mai
 
 	//inscription
 	if (filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)) {
-		array_pop($_POST);
+		if ($_POST['pwd'] == $_POST['pwd_repeat']) {
+			array_pop($_POST);
 
-		try{
-			$inscription = inscription($bdd, $_POST);
-		}
-		catch(Exception $e){
-
+			try{
+				$inscription = inscription($bdd, $_POST);
+				if ($inscription == TRUE) {
+					header('Location: ../view/home.php?success=inscription');
+				}
+			}
+			catch(Exception $e){
+				header('Location: ../view/home.php?error=inscription');
+			}
 		}
 
 	}
@@ -77,11 +82,13 @@ function inscription($bdd, $data){
 
 	$result = $bdd->inscription($data);
 
+	var_dump($result);
 	if ($result == TRUE) {
 		header('Location: ../view/home.php');
 	}
 	else{
-		header('Location: ../view/home.php?error=inscription');
+		throw new Exception("Error Processing inscription");
+		
 	}
 }
 

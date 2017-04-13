@@ -72,10 +72,12 @@ class SPDO
      * @return bool
      */
     public function inscription($data){
-        // INSERT INTO users(id_user, lastName, firstName, avatar, email, pwd, birthDate, id_roles) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
-        $req = $this->PDOInstance->prepare("INSERT INTO users(lastName, firstName, avatar, email, pwd) VALUES (?,?,".'view/img/avatar/default.png'.",?,?)");
-        $tmp = $req-execute(array($data['lastName'],$data['firstName'],$data['email'],$data['password']));
+        
 
+        $req = $this->PDOInstance->prepare("INSERT INTO users(lastName, firstName, avatar, email, pwd, id_roles) VALUES (?,?,"."'view/img/avatar/default.png'".",?,?,'1')");
+        $tmp = $req->execute(array($data['lastName'],$data['firstName'],$data['mail'],$data['pwd']));
+
+        var_dump($req);
         return $tmp;
     }
 
