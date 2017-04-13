@@ -88,7 +88,6 @@ function inscription($bdd, $data){
 	}
 	else{
 		throw new Exception("Error Processing inscription");
-		
 	}
 }
 
