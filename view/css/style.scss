@@ -1,5 +1,10 @@
 $backgroundColor: #8A1002;
-$heightHeader: 150px;
+$heightHeader: 50px;
+
+
+$tileSize: 200px;
+$tileMargin: 20px;
+$tilePerLine: 4;
 
 body{
     margin: 0;
@@ -12,6 +17,23 @@ header {
 }
 
 .content{
-    width: 800px;
+    width: ($tileSize + $tileMargin*2)*$tilePerLine;
     margin: auto;
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    padding: 0;
+
+    .card{
+        width: $tileSize;
+        height: $tileSize;
+        margin: $tileMargin;
+
+        background-color: tomato;
+    }
+
 }

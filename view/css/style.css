@@ -1,2 +1,25 @@
 body {
-  background-color: tomato; }
+  margin: 0;
+  padding: 0; }
+
+header {
+  background-color: #8A1002;
+  height: 50px; }
+
+.content {
+  width: 960px;
+  margin: auto; }
+
+.grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+  padding: 0; }
+  .grid .card {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: tomato; }

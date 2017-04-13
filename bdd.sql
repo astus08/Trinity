@@ -167,3 +167,14 @@ ALTER TABLE activities_subscribes ADD CONSTRAINT FK_activities_subscribes_id_use
 ALTER TABLE activities_subscribes ADD CONSTRAINT FK_activities_subscribes_id_activity FOREIGN KEY (id_activity) REFERENCES activities(id_activity);
 ALTER TABLE suggestions ADD CONSTRAINT FK_suggestions_id_user FOREIGN KEY (id_user) REFERENCES users(id_user);
 ALTER TABLE products ADD CONSTRAINT FK_products_id_category FOREIGN KEY (id_category) REFERENCES category(id_category);
+
+
+INSERT INTO `activities` (`id_activity`, `lastName`, `description`, `dateActivity`, `reccurence`, `prix`, `vote_enable`, `place`) VALUES
+(1, 'surf', 'Du surf', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
+(2, 'surff', 'Du surff', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
+(3, 'surg', 'Du surg', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
+(4, 'sur1', 'Du sur1', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
+(5, 'sur2', 'Du sur2', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
+(6, 'sur3', 'Du sur3', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
+(7, 'sur4', 'Du sur4', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
+(8, 'sur5', 'Du sur5', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr');
