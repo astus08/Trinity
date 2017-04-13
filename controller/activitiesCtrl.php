@@ -1,41 +1,42 @@
 <?php
 namespace controller;
 
-require '..\modele\PDO\SPDO.php';
+require '\modele\PDO\SPDO.php';
 use modele\PDO\SPDO;
 
-$rows = array();
+//articles();
 
+// if (isset($_GET(action))){
+//     switch($_GET(action)){
+//         case 'all':
+//             articles();
+//             break;
+//     }
+// } else {
 
-foreach (SPDO::getInstance()->query('   SELECT *
-                                        FROM activities') as $line){
-    $rows[] = array_map('utf8_encode', $line);
-}
+// }
 
-echo json_encode($rows);
+echo $_GET(action);
 
-class ctrl{
+//function articles(){
 
-    public function article($id){
-        foreach (SPDO::getInstance()->query('   SELECT *
-                                                FROM activities
-                                                WHERE id = '.$id) as $line){
-            $rows[] = array_map('utf8_encode', $line);
-        }
+    $rows = array();
+
+    foreach (SPDO::getInstance()->query('   SELECT *
+                                            FROM activities') as $line){
+        $rows[] = array_map('utf8_encode', $line);
     }
 
-    public function article(){
-        foreach (SPDO::getInstance()->query('   SELECT *
-                                                FROM activities') as $line){
-            $rows[] = array_map('utf8_encode', $line);
-            ?>
+    echo json_encode($rows);
+//}
 
-            <php?
-            
-
-
-        }
+function article($id){
+    foreach (SPDO::getInstance()->query('   SELECT *
+                                            FROM activities
+                                            WHERE id = '.$id) as $line){
+        $rows[] = array_map('utf8_encode', $line);
     }
 }
+
 
 ?>
