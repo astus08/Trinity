@@ -8,8 +8,15 @@ require "header.php";
 				<article class="presentation" ng-controller="pictureCtrl" ng-init="init('<?php echo $id_picture; ?>')">
 					<div class="picture-presentation"><img src="{{picture.path}}" alt=""></div>
 					<br>
-					<p>Uploaded by : {{picture.firstName}} {{picture.lastName}} ({{picture.email}})</p>
-					<p>Date : {{picture.datePictureActivity}}</p>
+					<div class="author_like">
+						<div class="author">
+							<p>Uploaded by : {{picture.firstName}} {{picture.lastName}} ({{picture.email}})</p>
+							<p>Date : {{picture.datePictureActivity}}</p>
+						</div>
+						<div class="like">
+							<p>{{picture.likes}}</p>
+						</div>
+					</div>
 				</article>
 			<?php
 			} else if (isset($_GET['id_activity'])){ 

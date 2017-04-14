@@ -29,6 +29,8 @@ myApp.controller('pictureCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.init = function (id_picture) {
         $http.get('/trinity/controller/Pictures_Controller.php?id_picture=' + id_picture).success(function (data) {
             $scope.picture = data[0];
+
+            $scope.picture.likes += $scope.picture.likes>1 ? " likes" : " like";
             console.log(data);
         });
     };

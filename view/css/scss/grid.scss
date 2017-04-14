@@ -85,8 +85,24 @@
 
 }
 
-.picture-presentation{
-    margin-top: 20px;
-    width: 100%;
-    text-align: center;
+.presentation{
+
+    .picture-presentation{
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .author_like{
+        display: flex;
+        .author{
+            width:60%;
+        }
+
+        .like{
+            width: 40%;
+            text-align: right;
+        }
+    }
+
 }

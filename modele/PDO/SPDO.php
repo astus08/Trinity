@@ -101,11 +101,11 @@ class SPDO
      * @return array
      */
     public function getPicture($id){
-        $req = $this->PDOInstance->prepare("SELECT * FROM pictures_activity 
+        $req = $this->PDOInstance->prepare("SELECT *, (SELECT COUNT(*) AS compteur FROM likes WHERE id_picture_activity = ?) AS likes FROM pictures_activity
                                             INNER JOIN users ON
                                                 pictures_activity.id_user = users.id_user
                                             WHERE id_picture_activity = ?");
-        $req->execute(array($id));
+        $req->execute(array($id, $id));
         $tmp = $req->fetchAll();
         return $tmp;
     }

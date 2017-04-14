@@ -264,10 +264,20 @@ footer {
       -webkit-transform: scale(1.1);
               transform: scale(1.1); }
 
-.picture-presentation {
+.presentation .picture-presentation {
   margin-top: 20px;
   width: 100%;
   text-align: center; }
+
+.presentation .author_like {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .presentation .author_like .author {
+    width: 60%; }
+  .presentation .author_like .like {
+    width: 40%;
+    text-align: right; }
 
 .display-none {
   display: none; }
