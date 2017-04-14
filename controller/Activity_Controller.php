@@ -10,7 +10,7 @@ if (isset($_GET['action'])){
             articles();
             break;
     }
-} else if (isset($_GET['id'])){
+} elseif (isset($_GET['id'])){
     article($_GET['id']);
 }
 

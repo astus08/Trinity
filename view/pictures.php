@@ -12,7 +12,7 @@
         <section class="content">
 
 			<?php
-			if (isset($_GET['id'])){
+			if (isset($_GET['id_picture'])){
 				$id = $_GET['id'];
 				echo $id;
 				?>
@@ -22,7 +22,7 @@
 					<input type="button" name="dsplayPictures" value="Display the pictures">
 				</article>
 			<?php
-			} else { ?>
+			} else if (isset($_GET['id_article'])){ ?>
 				<ul class="grid" ng-controller="activitiesCtrl">
 					<li class="card" ng-repeat="activity in activities">
 						<a href="activities.php?id={{activity.id_activity}}">
