@@ -66,7 +66,7 @@ function connexion($bdd, $data)
 		if ($data['mail'] != $result['email']) {
 			throw new Exception("Emails are not the same");
 		}
-		if ($data['pwd'] != $result['pwd']) {
+		if (!password_verify($data['pwd'], $result['pwd'])) {
 			throw new Exception("Passwords are not the same");
 		}
 

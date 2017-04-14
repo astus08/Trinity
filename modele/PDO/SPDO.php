@@ -75,7 +75,7 @@ class SPDO
         
 
         $req = $this->PDOInstance->prepare("INSERT INTO users(lastName, firstName, avatar, email, pwd, id_roles) VALUES (?,?,"."'view/img/avatar/default.png'".",?,?,'1')");
-        $tmp = $req->execute(array($data['lastName'],$data['firstName'],$data['mail'],$data['pwd']));
+        $tmp = $req->execute(array($data['lastName'],$data['firstName'],$data['mail'],password_hash($data['pwd'], PASSWORD_DEFAULT)));
 
         var_dump($req);
         return $tmp;
