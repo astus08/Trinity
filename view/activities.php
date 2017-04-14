@@ -1,50 +1,47 @@
-<!DOCTYPE HTML>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Affichage article</title>
-        <link rel="stylesheet" href="/trinity/view/css/style.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-	</head>
-	<body  ng-app="myApp">
-		<header class="title">Title</header>
-        <section class="content">
+<?php
+require "header.php"; 
+?>
 
-			<?php
-			if (isset($_GET['id'])){
-				$id = $_GET['id'];
-				echo $id;
-				?>
-				<article class="presentation" ng-controller="activityCtrl" ng-init="init('<?php echo $id; ?>')">
-					{{activity.lastName}}
-					<br>
-					<input type="button" name="dsplayPictures" value="Display the pictures">
-				</article>
-			<?php
-			} else { ?>
-				<ul class="grid" ng-controller="activitiesCtrl">
-					<li class="card" ng-repeat="activity in activities">
-						<a href="activities.php?id={{activity.id_activity}}">
-							<header>
-								<div class="tile-title">{{activity.lastName}}</div>
-							</header>
-							<article>
-								<span class="tile-description">{{activity.description}}</span>
-							</article>
-							<footer>
-								<div class="date"><span class="tile-nextDate">{{activity.dateActivity}}</span></div>
-								<div class="price"><span class="tile-price">{{activity.prix}} €</span></div>
-							</footer>
-								
+	<?php
+	if (isset($_GET['id'])){
+		$id = $_GET['id'];
+		?>
+		<article class="presentation" ng-controller="activityCtrl" ng-init="init('<?php echo $id; ?>')">
+			{{activity.lastName}}
+			{{activity.id_activity}}
+			<br>
+			<form action="pictures.php">
+				<input type="text" name="id_activity" value={{activity.id_activity}} class="display-none">
 
-						</a>
-					</li>
-				</ul>
-			<?php
-			}?>
-        </section>
+				<label for="btn_pict" class="button_picture">
+					<input type="submit" id="btn_pict" class="display-none">
+					<span>Display the pictures</span>
+				</label>
+			</form>
+		</article>
+	<?php
+	} else { ?>
+		<ul class="grid" ng-controller="activitiesCtrl">
+			<li class="card" ng-repeat="activity in activities">
+				<a href="activities.php?id={{activity.id_activity}}">
+					<div class="tile-header">
+						<div class="tile-title">{{activity.lastName}}</div>
+					</div>
+					<div class="tile-mainPart">
+						<span class="tile-description">{{activity.description}}</span>
+					</div>
+					<div class="tile-footer">
+						<div class="date"><span class="tile-nextDate">{{activity.dateActivity}}</span></div>
+						<div class="price"><span class="tile-price">{{activity.prix}} €</span></div>
+					</div>
+						
 
-	</body>
-    <script type="text/javascript" src="/trinity/view/js/app.js"></script>
-</html>
+				</a>
+			</li>
+		</ul>
+	<?php
+	}?>
+
+<?php
+require "footer.php";
+?>

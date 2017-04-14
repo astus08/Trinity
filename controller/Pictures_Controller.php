@@ -1,0 +1,33 @@
+<?php 
+namespace controller;
+
+require '..\modele\PDO\SPDO.php';
+use modele\PDO\SPDO;
+
+if (isset($_GET['id_activity'])){
+    pictures($_GET['id_activity']);
+} elseif (isset($_GET['id_picture'])){
+    article($_GET['id_picture']);
+}
+
+
+function pictures($id_activity){
+
+    $rows = array();
+
+    foreach (SPDO::getInstance()->query('   SELECT *
+                                            FROM pictures_activity
+                                            WHERE id_activity = \''.$id_activity .'\'') as $line){
+        $rows[] = array_map('utf8_encode', $line);
+    }
+
+    echo json_encode($rows);
+}
+
+function picture($id_picture){
+    $tmp = SPDO::getInstance()->getPicture($id_picture);
+
+    echo json_encode($tmp);
+}
+
+?>

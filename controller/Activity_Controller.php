@@ -32,8 +32,6 @@ function article($id){
     $tmp = SPDO::getInstance()->getArticle($id);
 
     echo json_encode($tmp);
-
-    var_dump($tmp);
 }
 
 

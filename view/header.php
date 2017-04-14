@@ -5,10 +5,12 @@
         <title>Site Web BDE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
       </head>
 
-        <body>
+        <body ng-app="myApp">
             <div class="site-container">
 
               <div class="site-pusher">

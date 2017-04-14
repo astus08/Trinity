@@ -1,50 +1,31 @@
-<!DOCTYPE HTML>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Affichage article</title>
-        <link rel="stylesheet" href="/trinity/view/css/style.css"/>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-    	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
-	</head>
-	<body  ng-app="myApp">
-		<header class="title">Title</header>
-        <section class="content">
+<?php
+require "header.php"; 
+?>
 
 			<?php
 			if (isset($_GET['id_picture'])){
-				$id = $_GET['id'];
-				echo $id;
-				?>
-				<article class="presentation" ng-controller="activityCtrl" ng-init="init('<?php echo $id; ?>')">
-					{{activity.lastName}}
+				$id_picture = $_GET['id_picture'];?>
+				<article class="presentation" ng-controller="activityCtrl" ng-init="init('<?php echo $id_picture; ?>')">
+					{{picture.path}}
 					<br>
 					<input type="button" name="dsplayPictures" value="Display the pictures">
 				</article>
 			<?php
-			} else if (isset($_GET['id_article'])){ ?>
-				<ul class="grid" ng-controller="activitiesCtrl">
-					<li class="card" ng-repeat="activity in activities">
-						<a href="activities.php?id={{activity.id_activity}}">
-							<header>
-								<div class="tile-title">{{activity.lastName}}</div>
-							</header>
-							<article>
-								<span class="tile-description">{{activity.description}}</span>
-							</article>
-							<footer>
-								<div class="date"><span class="tile-nextDate">{{activity.dateActivity}}</span></div>
-								<div class="price"><span class="tile-price">{{activity.prix}} €</span></div>
-							</footer>
-								
+			} else if (isset($_GET['id_activity'])){ 
+                $id_activity = $_GET['id_activity'];?>
+				<ul class="grid" ng-controller="picturesCtrl" ng-init="init('<?php echo $id_activity; ?>')">
+					<li class="card_picture" ng-repeat="picture in pictures">
+						<a href="pictures.php?id_picture={{picture.id_picture_activity}}">
+                            <img src="{{picture.path}}" alt="">
 
 						</a>
 					</li>
 				</ul>
 			<?php
-			}?>
-        </section>
+			} else {
+                header("Location: activities.php");
+            }?>
 
-	</body>
-    <script type="text/javascript" src="/trinity/view/js/app.js"></script>
-</html>
+<?php
+require "footer.php";
+?>
