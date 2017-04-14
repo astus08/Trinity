@@ -16,7 +16,7 @@ require "header.php";
 				<ul class="grid" ng-controller="picturesCtrl" ng-init="init('<?php echo $id_activity; ?>')">
 					<li class="picture" ng-repeat="picture in pictures">
 						<a href="pictures.php?id_picture={{picture.id_picture_activity}}">
-                            <img src="http://placehold.it/200x200" alt="{{picture.id_picture_activity}}">
+                            <img src="{{picture.path}}" alt="{{picture.id_picture_activity}}">
 
 						</a>
 					</li>

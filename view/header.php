@@ -28,7 +28,7 @@
                           <nav class="menu">
                             <a href="index.php">Accueil</a>
                             <a href="activities.php">Activites</a>
-                            <a href="#">Suggestions</a>
+                            <a href="suggestion.php">Suggestions</a>
                             <a href="#">Boutique</a>
                           </nav>
 

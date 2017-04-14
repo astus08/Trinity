@@ -77,7 +77,7 @@ class SPDO
     public function inscription($data){
         
 
-        $req = $this->PDOInstance->prepare("INSERT INTO users(lastName, firstName, avatar, email, pwd, id_roles) VALUES (?,?,"."'view/img/avatar/default.png'".",?,?,'1')");
+        $req = $this->PDOInstance->prepare("INSERT INTO users(lastName, firstName, avatar, email, pwd, id_roles) VALUES (?,?,"."'view/images/avatar/default.png'".",?,?,'1')");
         $tmp = $req->execute(array($data['lastName'],$data['firstName'],$data['mail'],password_hash($data['pwd'], PASSWORD_DEFAULT)));
 
         return $tmp;
