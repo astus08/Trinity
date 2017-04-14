@@ -40,6 +40,7 @@ a{ text-decoration: none; color: inherit; }
 
     max-width: ($tileWidth + ($tileMargin + $tileBorder + $tilePadding)*2)*$tilePerLine;
     margin: auto;
+    padding-bottom:66px;
 }
 
 
@@ -237,7 +238,7 @@ footer{
 }
 
 .menu_footer a:hover{
-	color: $backgroundColor;
+	color: #ff8080;
 }
 
 .menu_footer a{

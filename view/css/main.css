@@ -30,7 +30,8 @@ a {
   overflow: hidden;
   padding-top: 66px;
   max-width: 1016px;
-  margin: auto; }
+  margin: auto;
+  margin-bottom: 66px; }
 
 .header {
   position: fixed;
@@ -170,7 +171,7 @@ footer {
   background-color: #C2242A; }
 
 .menu_footer a:hover {
-  color: #C2242A; }
+  color: #ff8080; }
 
 .menu_footer a {
   padding: 10px;
