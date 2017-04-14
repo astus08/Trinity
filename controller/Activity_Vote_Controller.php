@@ -13,15 +13,23 @@ if (isset($_POST['id_user']) && isset($_POST['id_activity']) && isset($_POST['bt
 
 		array_pop($_POST);
 
+
 		$bdd = modele\PDO\SPDO::getInstance();
 		
-		$vote = $bdd->vote($_POST);
+		$isVotePossible = $bdd->alreadyVoted();
 
-		if ($vote == TRUE) {
-			header('Location: ../view/vote.php');
-		}else{
-			header('Location: ../view/vote.php?error=true');
+		if (!$isVotePossible) {
+			# code...
+			$vote = $bdd->vote($_POST);
+
+			if ($vote == TRUE) {
+				header('Location: ../view/vote.php');
+			}else{
+				header('Location: ../view/vote.php?error=true');
+			}
 		}
+
+		header('Location: ../view/vote.php?error=already');
 	}
 	else{
 		header('Location: ../view/vote.php?error=true');
