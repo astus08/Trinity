@@ -107,9 +107,21 @@ class SPDO
         return $tmp;
     }
 
+    /**
+     * Test if a user has already voted for a activities
+     * @param array $data 
+     * @return bool
+     */
     public function alreadyVoted($data){
         $req = $this->PDOInstance->prepare("SELECT * FROM activities_vote WHERE id= ?");
         $tmp = $req->execute(array($data['id_user']));
+
+        return $tmp;
+    }
+
+    public function suggest($data){
+        $req = $this->PDOInstance->prepare("INSERT INTO suggestions(content, dateSuggestion, id_user) VALUES (?,?,?)");
+        $tmp = $req->execute(array($data['content'],date("Y-m-d H:i:s"),$data['id_user']));
 
         return $tmp;
     }
