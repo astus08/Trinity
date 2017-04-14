@@ -1,4 +1,5 @@
 <?php
+	require "header.php";
 
 session_start();
 
@@ -7,14 +8,13 @@ if (isset($_SESSION['id'])) {
 	echo "Vous êtes co !";
 	var_dump($_SESSION);
 }
+else{
+	//header('Location: index.php');
+}
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>home</title>
-</head>
-<body>
+
+
 
 <h1>hello home </h1>
 
@@ -35,5 +35,7 @@ if (isset($_SESSION['id'])) {
 	<input type="submit" name="btn" value="submit">
 </form>
 
-</body>
-</html>
+
+<?php
+require "footer.php";
+?>
