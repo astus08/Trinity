@@ -2,7 +2,7 @@
 
 	$('#header__icon').click(function(e){
 		e.preventDefault();
-		$('body').addClass('width--sidebar');
+		$('body').toggleClass('width--sidebar');
 	});
 
 	$('#site-cache').click(function(e){
