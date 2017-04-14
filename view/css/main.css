@@ -1,283 +1,203 @@
-.bg-header   { background: #ff8080; }
-
-
-html, body{
-	font-family: Roboto;
-	font-size: 16px;
-	line-height: 1.4;
-	height: 100%;
-
-	margin: 0;
-	padding: 0;
-	background-color:white;
-
-}
-
-.swagButton{
-	position: relative;
-	float:right;
-
-
-	
-	border: solid 2px red;
-	border-bottom: solid 0px;
-	border-radius: 50px;
-	padding: 0px 20px;
-}
-
-.swagButton:hover{
-	background-color: red;
-	border: 0px solid #ff8080;	
-}
-
-
-
-a{ text-decoration: none; color: inherit; }
-
-.site-content{
-	overflow: hidden;
-	padding-top: 66px;
-}
-
-
-
-.header{
-	position: fixed;
-	left: 0;
-	right: 0;
-	height: 69px;
-	line-height: 66px;
-	color: #FFF;
-	background-color: red;
-
-}
-
-.header__logo{
-	font-weight: bold;
-	padding: 0 25px;
-	float: left;
-
-}
-
-.menu{
-	float: left;
-
-}
-
-
-.menu2 a{
-	float:right;
-	padding: 0 10px;
-	
-
-}
-.menu2{
-	margin-left: 350px;
-}
-.menu a{
-	padding: 0 10px;
-}
-.menu a:hover{
-	color:#ff8080;
-}
-
-.menu2 a:hover{
-	color:#ff8080;
-}
-
-
-
-
-@media only screen and (max-width: 750px){
-
-	.div_img img{
-		width:100%;
-		height:auto;
-		opacity: 0.2;
-	}
-
-	.div_img{
-		float:right;
-		top:0;
-	}
-
-	.site-pusher, .site-container{ height: 100%; }
-
-	.site-container { overflow: hidden; }
-
-	.site-pusher{
-		transition-duration: 0.3s;
-		transform:translateX(0px);
-	}
-
-	.site-content{ 
-		overflow: hidden;
-		position: absolute;
-		top: 66px;
-		right: 0;
-		left: 0;
-		bottom: 0;
-		padding-top: 0;
-		overflow-y: scroll;
-		-webkit-overflow-scrolling: touch;
-
-	 }
-
-	.header{
-		position: static;
-
-	}
-
-	.header__icon{
-		position: relative;
-		display: block;
-		float: left;
-		width: 50px;
-		height: 66px;
-		cursor: pointer;
-		background-color: rgba(#FFF, 0.5);
-	}
-
-	.header__icon::after{
-			content:'';
-			position: absolute;
-			display: block;
-			width: 16px;
-			height: 0;
-			top: 16px;
-			left: 15px;
-			box-shadow: 0 10px 0 1px #FFF, 0 16px 0 1px #FFF, 0 22px 0 1px #FFF;
-	}
-
-	.menu{
-		position: absolute;
-		left: 0;
-		top: 0;
-		bottom: 0;
-		width:250px;
-		background-color: red;
-		transform:translateX(-250px);
-		
-	}
-	
-
-	.menu a{
-		display: block;
-		height: 40px;
-		background-color: red;
-
-		text-align: center;
-		line-height: 40px;
-
-		border-bottom: 1px solid #ff8080;
-	}
-
-
-	.menu2{
-		position: absolute;
-		left: 0;
-		top: 0;
-		text-align:center;
-		
-		width:250px;
-		background-color: red;
-		transform:translateX(-250px);
-		
-	}
-	
-
-	.menu2 a{
-		display: block;
-		height: 40px;
-		background-color: red;
-		float:left;
-		text-align: center;
-		line-height: 69px;
-
-		
-	}
-
-	.width--sidebar .site-pusher{
-		
-		transform:translateX(250px);
-	}
-
-	.width--sidebar .site-cache{
-
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: rgba(0,0,0,0.6);
-	}
-}
-
-@media only screen and (max-width: 350px){
-
-		.menu_footer{
-			display:none;
-		}
-}
-
-footer{
-	position:fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 69px;
-	line-height: 66px;
-	color: #FFF;
-	background-color: red;
-
-}
-
-.menu_footer a:hover{
-	color:#ff8080;
-}
-
-.menu_footer a{
-	padding: 10px;
-	right:0;
-	left:0;
-}
-
-.menu_footer{
-	margin:0;
-	padding:0;
-	text-align:center;
-}
-
-
-
-
-}
-.logo{
-	width: 32px;
-	height: 32px;
-	margin: 10px;
-	float:left;
-}
-
-#exia_logo{
-	width: 45px;
-	height: 25px;
-	line-height: 32px;
-}
-
-.logo{
-	line-height: 32px;
-}
-
-
-
-
-.div_img img{
-
-	position: absolute;
-    top: 0; bottom:0; left: 0; right:0;
-    margin: auto;
-    z-index:-3;
-}
-
-
+.bg-header {
+  background: #ff8080; }
+
+html, body {
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 1.4;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: white; }
+
+.swagButton {
+  position: relative;
+  float: right;
+  border: solid 2px red;
+  border-bottom: solid 0px;
+  border-radius: 50px;
+  padding: 0px 20px; }
+
+.swagButton:hover {
+  background-color: #C2242A;
+  border: 0px solid #ff8080; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.site-content {
+  overflow: hidden;
+  padding-top: 66px; }
+
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 69px;
+  line-height: 66px;
+  color: #FFF;
+  background-color: #C2242A; }
+
+.header__logo {
+  font-weight: bold;
+  padding: 0 25px;
+  float: left; }
+
+.menu {
+  float: left; }
+
+.menu2 a {
+  float: right;
+  padding: 0 10px; }
+
+.menu2 {
+  margin-left: 350px; }
+
+.menu a {
+  padding: 0 10px; }
+
+.menu a:hover {
+  color: #ff8080; }
+
+.menu2 a:hover {
+  color: #ff8080; }
+
+@media only screen and (max-width: 750px) {
+  .div_img img {
+    width: 100%;
+    height: auto;
+    opacity: 0.2; }
+  .div_img {
+    float: right;
+    top: 0; }
+  .site-pusher, .site-container {
+    height: 100%; }
+  .site-container {
+    overflow: hidden; }
+  .site-pusher {
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); }
+  .site-content {
+    overflow: hidden;
+    position: absolute;
+    top: 66px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 0;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch; }
+  .header {
+    position: static; }
+  .header__icon {
+    position: relative;
+    display: block;
+    float: left;
+    width: 50px;
+    height: 66px;
+    cursor: pointer;
+    background-color: rgba(194, 36, 42, 0.5); }
+  .header__icon::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 16px;
+    height: 0;
+    top: 16px;
+    left: 15px;
+    box-shadow: 0 10px 0 1px #FFF, 0 16px 0 1px #FFF, 0 22px 0 1px #FFF; }
+  .menu {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: #C2242A;
+    -webkit-transform: translateX(-250px);
+            transform: translateX(-250px); }
+  .menu a {
+    display: block;
+    height: 40px;
+    background-color: #C2242A;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #ff8080; }
+  .menu2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+    width: 250px;
+    background-color: #C2242A;
+    -webkit-transform: translateX(-250px);
+            transform: translateX(-250px); }
+  .menu2 a {
+    display: block;
+    height: 40px;
+    background-color: #C2242A;
+    float: left;
+    text-align: center;
+    line-height: 69px; }
+  .width--sidebar .site-pusher {
+    -webkit-transform: translateX(250px);
+            transform: translateX(250px); }
+  .width--sidebar .site-cache {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); } }
+
+@media only screen and (max-width: 350px) {
+  .menu_footer {
+    display: none; } }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 69px;
+  line-height: 66px;
+  color: #FFF;
+  background-color: #C2242A; }
+
+.menu_footer a:hover {
+  color: #C2242A; }
+
+.menu_footer a {
+  padding: 10px;
+  right: 0;
+  left: 0; }
+
+.menu_footer {
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+
+.logo {
+  width: 32px;
+  height: 32px;
+  margin: 10px;
+  float: left; }
+
+#exia_logo {
+  width: 45px;
+  height: 25px;
+  line-height: 32px; }
+
+.logo {
+  line-height: 32px; }
+
+.div_img img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: -3; }
