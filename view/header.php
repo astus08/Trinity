@@ -1,4 +1,6 @@
-  <!DOCTYPE html>
+<?php session_start(); ?>
+
+<!DOCTYPE html>
     <html>
       <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -26,17 +28,22 @@
                           </div>
 
                           <nav class="menu">
-                            <a href="index.php">Accueil</a>
-                            <a href="activities.php">Activites</a>
+                            <a href="index.php">Home</a>
+                            <a href="activities.php">Activities</a>
                             <a href="suggestion.php">Suggestions</a>
-                            <a href="#">Boutique</a>
+                            <a href="#">Shop</a>
                           </nav>
 
 
 
                           <nav class="menu2">
-                            <a href="#">Inscription</a>
-                            <a href="#">Connexion</a>
+                            <?php 
+                            if(isset($_SESSION['id'])) {
+                              echo 'Welcome '. $_SESSION['firstName']. ' '. $_SESSION['lastName'];
+                            } else {?>
+                                <a href="home.php">Inscription</a>
+                                <a href="home.php">Connexion</a>
+                            <?php } ?>
                           </nav>
 
                         

@@ -28,10 +28,10 @@ a {
 
 .site-content {
   overflow: hidden;
-  padding-top: 66px;
+  padding-top: 69px;
   max-width: 1016px;
   margin: auto;
-  padding-bottom: 66px; }
+  padding-bottom: 69px; }
 
 .header {
   position: fixed;
@@ -39,7 +39,7 @@ a {
   left: 0;
   right: 0;
   height: 69px;
-  line-height: 66px;
+  line-height: 69px;
   color: #FFF;
   background-color: #C2242A; }
 
@@ -56,7 +56,8 @@ a {
   padding: 0 10px; }
 
 .menu2 {
-  margin-left: 350px; }
+  float: right;
+  margin-right: 20px; }
 
 .menu a {
   padding: 0 10px; }
@@ -166,7 +167,7 @@ footer {
   left: 0;
   right: 0;
   height: 69px;
-  line-height: 66px;
+  line-height: 69px;
   color: #FFF;
   background-color: #C2242A; }
 
@@ -262,6 +263,11 @@ footer {
     .grid .picture:hover {
       -webkit-transform: scale(1.1);
               transform: scale(1.1); }
+
+.picture-presentation {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center; }
 
 .display-none {
   display: none; }

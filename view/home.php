@@ -1,8 +1,6 @@
 <?php
 	require "header.php";
 
-session_start();
-
 if (isset($_SESSION['id'])) {
 	# code...
 	echo "Vous êtes co !";

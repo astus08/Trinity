@@ -5,10 +5,11 @@ require "header.php";
 			<?php
 			if (isset($_GET['id_picture'])){
 				$id_picture = $_GET['id_picture'];?>
-				<article class="presentation" ng-controller="activityCtrl" ng-init="init('<?php echo $id_picture; ?>')">
-					{{picture.path}}
+				<article class="presentation" ng-controller="pictureCtrl" ng-init="init('<?php echo $id_picture; ?>')">
+					<div class="picture-presentation"><img src="{{picture.path}}" alt=""></div>
 					<br>
-					<input type="button" name="dsplayPictures" value="Display the pictures">
+					<p>Uploaded by : {{picture.firstName}} {{picture.lastName}} ({{picture.email}})</p>
+					<p>Date : {{picture.datePictureActivity}}</p>
 				</article>
 			<?php
 			} else if (isset($_GET['id_activity'])){ 

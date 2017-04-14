@@ -7,7 +7,7 @@ use modele\PDO\SPDO;
 if (isset($_GET['id_activity'])){
     pictures($_GET['id_activity']);
 } elseif (isset($_GET['id_picture'])){
-    article($_GET['id_picture']);
+    picture($_GET['id_picture']);
 }
 
 
@@ -26,8 +26,9 @@ function pictures($id_activity){
 
 function picture($id_picture){
     $tmp = SPDO::getInstance()->getPicture($id_picture);
-
     echo json_encode($tmp);
+
+    
 }
 
 ?>

@@ -183,7 +183,7 @@ INSERT INTO `roles` (`id_roles`, `roleName`) VALUES
 (NULL, 'user');
 
 INSERT INTO `users` (`id_user`, `lastName`, `firstName`, `avatar`, `email`, `pwd`, `birthDate`, `id_roles`) VALUES 
-(NULL, 'admin', 'admin', 'view/images/avatar/default.png', 'admin@admin.admin', 'admin', NULL, '1');
+(NULL, 'admin', 'admin', 'view/images/avatar/default.png', 'admin@admin.admin', '$2y$10$mncWy40DNBmODe9cLRkvuud2HTbqgjYWruQnRytA.W4ApVZT4sWhe', NULL, '1');
 
 INSERT INTO `pictures_activity` (`id_picture_activity`, `path`, `datePictureActivity`, `id_activity`, `id_user`) VALUES 
 (NULL, 'http://chan.catiewayne.com/c/src/138578149239.png', '2017-04-13 00:00:00', '1', '1'),

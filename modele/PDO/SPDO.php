@@ -96,6 +96,21 @@ class SPDO
     }
 
     /**
+     * Return the information about the picture selected
+     * @param id of the article
+     * @return array
+     */
+    public function getPicture($id){
+        $req = $this->PDOInstance->prepare("SELECT * FROM pictures_activity 
+                                            INNER JOIN users ON
+                                                pictures_activity.id_user = users.id_user
+                                            WHERE id_picture_activity = ?");
+        $req->execute(array($id));
+        $tmp = $req->fetchAll();
+        return $tmp;
+    }
+
+    /**
      * Vote for an activity
      * @param array $data 
      * @return bool

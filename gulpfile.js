@@ -28,5 +28,5 @@ gulp.task('default', function(){
 
     gulp.watch(path.scss + '**/*.scss', ['sass_compilation_+_prefixer']);
 
-    gulp.watch(['*.html', 'js/*.js', 'view/*.php', path.css+'*.css'], ['browser_reload']);
+    gulp.watch(['view/*.html', 'view/js/*.js', 'view/*.php', path.css+'*.css'], ['browser_reload']);
 })
