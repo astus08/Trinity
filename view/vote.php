@@ -20,8 +20,8 @@ if (!isset($_SESSION['id'])) {
 <body>
 
 <form action="../controller/Activity_Vote_Controller.php" method="POST">
-	<input type="text" name="id_user" value="<?php echo $_SESSION['id']; ?>">
-	<input type="test" name="id_ativity" value="<?php echo "1";//id ?>">
+	<input type="number" name="id_user" value="<?php echo $_SESSION['id']; ?>">
+	<input type="number" name="id_activity" value="<?php echo "1";//id ?>">
 	<input type="submit" name="btn">
 </form>
 

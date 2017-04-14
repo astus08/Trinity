@@ -4,6 +4,9 @@ namespace modele\PDO;
 
 use \PDO;
 
+
+date_default_timezone_set('Europe/Paris');
+
 class SPDO
 {
     private $PDOInstance = null;
@@ -77,7 +80,6 @@ class SPDO
         $req = $this->PDOInstance->prepare("INSERT INTO users(lastName, firstName, avatar, email, pwd, id_roles) VALUES (?,?,"."'view/img/avatar/default.png'".",?,?,'1')");
         $tmp = $req->execute(array($data['lastName'],$data['firstName'],$data['mail'],password_hash($data['pwd'], PASSWORD_DEFAULT)));
 
-        var_dump($req);
         return $tmp;
     }
 
@@ -93,6 +95,12 @@ class SPDO
         return $tmp;
     }
 
+    public function vote($data){
+        $req = $this->PDOInstance->prepare("INSERT INTO activities_vote(`dateVote`, `id_user`, `id_activity`) VALUES (?,?,?)");
+        $tmp = $req->execute(array(date("Y-m-d H:i:s"),$data['id_user'], $data['id_activity']));
+
+        return $tmp;
+    }
 }
 
 ?>
