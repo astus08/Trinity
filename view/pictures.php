@@ -14,9 +14,9 @@ require "header.php";
 			} else if (isset($_GET['id_activity'])){ 
                 $id_activity = $_GET['id_activity'];?>
 				<ul class="grid" ng-controller="picturesCtrl" ng-init="init('<?php echo $id_activity; ?>')">
-					<li class="card_picture" ng-repeat="picture in pictures">
+					<li class="picture" ng-repeat="picture in pictures">
 						<a href="pictures.php?id_picture={{picture.id_picture_activity}}">
-                            <img src="{{picture.path}}" alt="">
+                            <img src="http://placehold.it/200x200" alt="{{picture.id_picture_activity}}">
 
 						</a>
 					</li>

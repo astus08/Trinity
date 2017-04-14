@@ -71,19 +71,15 @@
 
     }
 
-    .card_picture{
-        
-        width: $tileWidth;
-        height: $tileWidth;
-        
+    .picture{
         margin: $tileMargin;
 
-        a {
-            height: 100%;width: 100%;
+        cursor: pointer;
 
-            img{
-                height: 100%;width: 100%;
-            }
+        transition: all 200ms ease-in-out;
+
+        &:hover{
+            transform: scale(1.1);
         }
     }
 

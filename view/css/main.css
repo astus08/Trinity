@@ -31,7 +31,7 @@ a {
   padding-top: 66px;
   max-width: 1016px;
   margin: auto;
-  margin-bottom: 66px; }
+  padding-bottom: 66px; }
 
 .header {
   position: fixed;
@@ -254,16 +254,14 @@ footer {
         float: right;
         width: 40%;
         text-align: center; }
-  .grid .card_picture {
-    width: 200px;
-    height: 200px;
-    margin: 20px; }
-    .grid .card_picture a {
-      height: 100%;
-      width: 100%; }
-      .grid .card_picture a img {
-        height: 100%;
-        width: 100%; }
+  .grid .picture {
+    margin: 20px;
+    cursor: pointer;
+    -webkit-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out; }
+    .grid .picture:hover {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1); }
 
 .display-none {
   display: none; }

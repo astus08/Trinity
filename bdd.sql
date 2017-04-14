@@ -58,8 +58,7 @@ CREATE TABLE pictures_activity(
         datePictureActivity Datetime ,
         id_activity         Int ,
         id_user             Int ,
-        PRIMARY KEY (id_picture_activity ) ,
-        UNIQUE (path )
+        PRIMARY KEY (id_picture_activity )
 )ENGINE=InnoDB;
 
 
@@ -178,3 +177,35 @@ INSERT INTO `activities` (`id_activity`, `lastName`, `description`, `dateActivit
 (6, 'sur3', 'Du sur3', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
 (7, 'sur4', 'Du sur4', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
 (8, 'sur5', 'Du sur5', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr');
+
+INSERT INTO `roles` (`id_roles`, `roleName`) VALUES 
+(NULL, 'admin'),
+(NULL, 'user');
+
+INSERT INTO `pictures_activity` (`id_picture_activity`, `path`, `datePictureActivity`, `id_activity`, `id_user`) VALUES 
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '1', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '2', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '2', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '2', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '2', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '2', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '3', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '3', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '3', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '4', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '4', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '5', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '6', '1'),
+(NULL, 'lol osef', '2017-04-13 00:00:00', '7', '1');
