@@ -23,7 +23,7 @@ gulp.task('sass_compilation_+_prefixer', function(){
 
 gulp.task('default', function(){
     browserSync.init({
-        proxy: "localhost:8080/Trinity"
+        proxy: "localhost:8080/Trinity/view"
     });
 
     gulp.watch(path.scss + '**/*.scss', ['sass_compilation_+_prefixer']);

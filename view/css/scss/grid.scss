@@ -1,3 +1,13 @@
+.options {
+    padding-top :20px;
+    padding-right: $tileMargin;
+    padding-left: $tileMargin;
+
+    .research-field{
+        float: right;
+    }
+}
+
 .grid{
     display: flex;
     flex-wrap: wrap;

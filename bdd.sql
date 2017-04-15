@@ -37,7 +37,7 @@ CREATE TABLE roles(
 
 CREATE TABLE activities(
         id_activity  int (11) Auto_increment  NOT NULL ,
-        lastName     Varchar (25) ,
+        title        Varchar (25) ,
         description  Text ,
         dateActivity Datetime ,
         reccurence   Int ,
@@ -168,15 +168,17 @@ ALTER TABLE suggestions ADD CONSTRAINT FK_suggestions_id_user FOREIGN KEY (id_us
 ALTER TABLE products ADD CONSTRAINT FK_products_id_category FOREIGN KEY (id_category) REFERENCES category(id_category);
 
 
-INSERT INTO `activities` (`id_activity`, `lastName`, `description`, `dateActivity`, `reccurence`, `prix`, `vote_enable`, `place`) VALUES
-(1, 'surf', 'Du surf', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
-(2, 'surff', 'Du surff', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
-(3, 'surg', 'Du surg', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
-(4, 'sur1', 'Du sur1', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
-(5, 'sur2', 'Du sur2', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
-(6, 'sur3', 'Du sur3', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
-(7, 'sur4', 'Du sur4', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr'),
-(8, 'sur5', 'Du sur5', '2010-04-02 15:28:22', 0, 10, 0, 'lol mdr');
+INSERT INTO `activities`
+(`id_activity`, `title`,             `description`,                          `dateActivity`,         `reccurence`, `prix`, `vote_enable`,    `place`) VALUES
+(1,             'Surf',                 'Du surf',                              "2017-04-11 15:50:36",  0, 30, 0,                               'lol mdr'),
+(2,             'Geek\'o bowling',      'Du bowling pour les geeks',            "2017-09-01 14:50:54",  0, 15, 0,                               'lol mdr'),
+(3,             'Natation',             'Nager comme les poissons',             "2017-12-16 15:30:42",  0, 8, 0,                                'lol mdr'),
+(4,             'Boxe',                 'Pour se taper dessus',                 "2017-06-06 20:30:12",  0, 15, 0,                               'lol mdr'),
+(5,             'Acrobranche',          'Monter dans les arbres',               "2018-04-03 22:00:46",  0, 20, 0,                               'lol mdr'),
+(6,             'Ping-Pong',            'Comme du tennis, mais en plus petit',  "2017-04-11 07:45:42",  0, 9, 0,                                'lol mdr'),
+(7,             'Escrime',              'Combats dignes de Zoro',               "2017-10-30 19:45:05",  0, 10, 0,                               'lol mdr'),
+(8,             'Paintball',            'Pan-pan',                              "2017-05-30 19:00:30",  0, 25, 0,                               'lol mdr'),
+(9,             'Futsal',               'Du football. Mais dans une salle.',    "2017-09-21 17:30:29",  0, 12, 0,                               'lol mdr');
 
 INSERT INTO `roles` (`id_roles`, `roleName`) VALUES 
 (NULL, 'admin'),

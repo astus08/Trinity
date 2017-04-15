@@ -1,10 +1,32 @@
 var myApp = angular.module('myApp',[]);
 
 myApp.controller('activitiesCtrl', ['$scope', '$http', function ($scope, $http) {
+    $scope.sort = {
+        model:   null,
+        options: [
+            {value: 'prix' , display: "Price"},
+            {value: '-prix', display: "Price (-)"}]
+    };
+
     $http.get('/trinity/controller/Activity_Controller.php?action=all').success(function (data) {
         $scope.activities = data;
+        $scope.activities.forEach(function (element) {
+            //Pour savoir si la date est passé ou non
+            var t             = element["dateActivity"].split(/[-: ]/);
+            element["date"]   = t[2] + "/" + t[1] + "/" + t[0];
+            element["hour"]   = t[3] + ":" + t[4];
+            element["passed"] = new Date(Date.UTC(t[0], t[1] - 1, t[2], t[3], t[4], t[5])) < Date.now();
+        }, this);
         console.log($scope.activities);
     });
+
+    $scope.isVisible = function(passed){
+        if (!$scope.onlyOld){
+            return true;
+        } else {
+            return passed;
+        }
+    }
 }]);
 
 myApp.controller('activityCtrl', ['$scope', '$http', function($scope,$http) {
