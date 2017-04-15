@@ -1,13 +1,11 @@
 <?php
 
-session_start();
+require 'header.php's
 
 if (!isset($_SESSION['id'])) {
 	# code...
 	header('Location: index.php');
 }
-
-require 'header.php'
 ?>
 
 <form action="../controller/Suggestion_Controller.php" method="POST">
