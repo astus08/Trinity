@@ -1,7 +1,8 @@
 <?php
 require "header.php"; 
 
-require_once('Pictures_Controller.php');
+require '..\modele\PDO\SPDO.php';
+use modele\PDO\SPDO;
 ?>
 
 			<?php
@@ -17,8 +18,7 @@ require_once('Pictures_Controller.php');
 						</div>
 						<div class="like">
 							<?php 
-							var_dump(controller\hasVote($id_picture));
-							if (controller\hasVote($id_picture)){?>
+							if (!SPDO::getInstance()->hasVote($id_picture, $_SESSION['id'])){?>
 								voter
 							<?php }?>
 							<p>{{picture.likes}}</p>

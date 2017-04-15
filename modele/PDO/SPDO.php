@@ -100,7 +100,7 @@ class SPDO
      * @param id of the picture
      * @return array
      */
-    public function getPicture($id, $user){
+    public function getPicture($id){
         $req = $this->PDOInstance->prepare("SELECT *, (SELECT COUNT(*) AS compteur FROM likes WHERE id_picture_activity = ?) AS likes FROM pictures_activity
                                             INNER JOIN users ON
                                                 pictures_activity.id_user = users.id_user

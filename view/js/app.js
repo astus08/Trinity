@@ -8,9 +8,6 @@ myApp.controller('activitiesCtrl', ['$scope', '$http', function ($scope, $http) 
             {value: '-prix', display: "Price (-)"},
             ]
     };
-
-
-
     $scope.sort.model = $scope.sort.options[0].value;
 
     $http.get('/trinity/controller/Activity_Controller.php?action=all').success(function (data) {

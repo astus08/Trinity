@@ -2,6 +2,7 @@
 	require "header.php";
 
 if (isset($_SESSION['id'])) {
+	header('Location: index.php');
 	# code...
 	echo "Vous êtes co !";
 	var_dump($_SESSION);
