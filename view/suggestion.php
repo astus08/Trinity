@@ -1,6 +1,6 @@
 <?php
 
-require 'header.php's
+require 'header.php';
 
 if (!isset($_SESSION['id'])) {
 	# code...
