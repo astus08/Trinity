@@ -46,7 +46,6 @@
                                 <a href="home.php">Connexion</a>
                             <?php } ?>
                           </nav>
-<?php var_dump($_SESSION['avatar']) ?>
                         
 
 
