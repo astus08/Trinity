@@ -97,17 +97,36 @@ class SPDO
 
     /**
      * Return the information about the picture selected
-     * @param id of the article
+     * @param id of the picture
      * @return array
      */
-    public function getPicture($id){
+    public function getPicture($id, $user){
         $req = $this->PDOInstance->prepare("SELECT *, (SELECT COUNT(*) AS compteur FROM likes WHERE id_picture_activity = ?) AS likes FROM pictures_activity
                                             INNER JOIN users ON
                                                 pictures_activity.id_user = users.id_user
                                             WHERE id_picture_activity = ?");
         $req->execute(array($id, $id));
         $tmp = $req->fetchAll();
+
         return $tmp;
+    }
+
+    /**
+     * Return true if the user authentified has already vote for this picture
+     * @param id of the picture
+     * @param id of the user
+     * @return array
+     */
+    public function hasVote($id, $user){
+        $req = $this->PDOInstance->prepare("SELECT * FROM likes
+                                            WHERE id_picture_activity = ? AND id_user= ?");
+        $req->execute(array($id, $user));
+
+        if (count($req->fetchAll()) == 1){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**

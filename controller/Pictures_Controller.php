@@ -1,6 +1,8 @@
 <?php 
 namespace controller;
 
+session_start();
+
 require '..\modele\PDO\SPDO.php';
 use modele\PDO\SPDO;
 
@@ -27,8 +29,10 @@ function pictures($id_activity){
 function picture($id_picture){
     $tmp = SPDO::getInstance()->getPicture($id_picture);
     echo json_encode($tmp);
+}
 
-    
+function hasVote($id_picture){
+    return SPDO::getInstance()->getPicture($id_picture, $_SESSION['id']);
 }
 
 ?>

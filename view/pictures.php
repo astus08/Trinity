@@ -1,5 +1,7 @@
 <?php
 require "header.php"; 
+
+require_once('Pictures_Controller.php');
 ?>
 
 			<?php
@@ -14,6 +16,11 @@ require "header.php";
 							<p>Date : {{picture.datePictureActivity}}</p>
 						</div>
 						<div class="like">
+							<?php 
+							var_dump(controller\hasVote($id_picture));
+							if (controller\hasVote($id_picture)){?>
+								voter
+							<?php }?>
 							<p>{{picture.likes}}</p>
 						</div>
 					</div>

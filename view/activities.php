@@ -31,7 +31,7 @@ require "header.php";
 				<input type="text" class="research-field" ng-model="searchField.title" value="" placeholder="Search">
 			</div>
 			<ul class="grid">
-				<li class="card" ng-repeat="activity in activities | orderBy:'prix' | filter: searchField:strict | limitTo: 8" ng-show="isVisible(activity.passed)">
+				<li class="card" ng-repeat="activity in activities | orderBy:sort.model | filter: searchField:strict | limitTo: 8" ng-show="isVisible(activity.passed)">
 					<a href="activities.php?id={{activity.id_activity}}">
 						<div class="tile-header">
 							<div class="tile-title">{{activity.title}}</div>

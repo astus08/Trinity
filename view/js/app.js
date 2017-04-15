@@ -5,8 +5,13 @@ myApp.controller('activitiesCtrl', ['$scope', '$http', function ($scope, $http) 
         model:   null,
         options: [
             {value: 'prix' , display: "Price"},
-            {value: '-prix', display: "Price (-)"}]
+            {value: '-prix', display: "Price (-)"},
+            ]
     };
+
+
+
+    $scope.sort.model = $scope.sort.options[0].value;
 
     $http.get('/trinity/controller/Activity_Controller.php?action=all').success(function (data) {
         $scope.activities = data;
@@ -16,6 +21,7 @@ myApp.controller('activitiesCtrl', ['$scope', '$http', function ($scope, $http) 
             element["date"]   = t[2] + "/" + t[1] + "/" + t[0];
             element["hour"]   = t[3] + ":" + t[4];
             element["passed"] = new Date(Date.UTC(t[0], t[1] - 1, t[2], t[3], t[4], t[5])) < Date.now();
+            element["prix"] = parseInt(element["prix"]);
         }, this);
         console.log($scope.activities);
     });
