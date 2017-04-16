@@ -112,6 +112,22 @@ class SPDO
     }
 
     /**
+     * Return the comments posted on a picture
+     * @param id of the picture
+     * @return array
+     */
+    public function getComments($id){
+        $req = $this->PDOInstance->prepare("SELECT * FROM comments 
+                                            INNER JOIN users ON
+                                                comments.id_user = users.id_user
+                                            WHERE id_picture_activity = ?");
+        $req->execute(array($id));
+        $tmp = $req->fetchAll();
+
+        return $tmp;
+    }
+
+    /**
      * Return true if the user authentified has already vote for this picture
      * @param id of the picture
      * @param id of the user
@@ -127,6 +143,28 @@ class SPDO
         } else {
             return false;
         }
+    }
+
+    /**
+     * Like a picture
+     * @return bool
+     */
+    public function votePct($idUser, $idPct){
+        $req = $this->PDOInstance->prepare("INSERT INTO likes(`id_user`, `id_picture_activity`) VALUES (?, ?)");
+        $tmp = $req->execute(array($idUser, $idPct));
+
+        return $tmp;
+    }
+
+    /**
+     * Comment a picture
+     * @return bool
+     */
+    public function commentPct($idUser, $idPct, $content){
+        $req = $this->PDOInstance->prepare("INSERT INTO comments(`content`, `dateComment`,`id_picture_activity`, `id_user`) VALUES (?, ?, ?, ?)");
+        $tmp = $req->execute(array($content, date("Y-m-d H:i:s"), $idPct, $idUser));
+
+        return $tmp;
     }
 
     /**

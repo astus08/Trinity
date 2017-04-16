@@ -53,10 +53,22 @@ myApp.controller('picturesCtrl', ['$scope', '$http', function ($scope, $http) {
 myApp.controller('pictureCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.init = function (id_picture) {
         $http.get('/trinity/controller/Pictures_Controller.php?id_picture=' + id_picture).success(function (data) {
+
+            console.log(data);
+
             $scope.picture = data[0];
 
-            $scope.picture.likes += $scope.picture.likes>1 ? " likes" : " like";
-            console.log(data);
+            console.log("data");
+            console.log($scope.picture);
+
+            $scope.comments = data[1];
+
+            console.log("Comments : ");
+            console.log($scope.comments);
+
+            $scope.likeText = $scope.picture.likes > 1 ? "likes" : "like";
+
+            $scope.voteText = "Give a vote to this picture";
         });
     };
 }]);
