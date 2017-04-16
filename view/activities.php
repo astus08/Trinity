@@ -2,23 +2,33 @@
 require "header.php"; 
 ?>
 	<?php
-	if (isset($_GET['id'])){
-		$id = $_GET['id'];
+	if (isset($_GET['id_activity'])){
+		$id_activity = $_GET['id_activity'];
 		// Present only ONE activity
 		?>
-		<article class="presentation" ng-controller="activityCtrl" ng-init="init('<?php echo $id; ?>')">
+		<article class="presentation" ng-controller="activityCtrl" ng-init="init('<?php echo $id_activity; ?>')">
 			{{activity.lastName}}
 			{{activity.id_activity}}
-			<br>
-			<form action="pictures.php">
-				<input type="text" name="id_activity" value={{activity.id_activity}} class="display-none">
-
-				<label for="btn_pict" class="button_picture">
-					<input type="submit" id="btn_pict" class="display-none">
-					<span>Display the pictures</span>
-				</label>
-			</form>
 		</article>
+
+		<br>
+
+		<div class="post-picture">
+			Post a new picture (max 10 Ko): 
+			<input type="hidden" name="MAX_FILE_SIZE" value="15360"/>
+			<input type="file" name="fileSelector" accept="image/*">
+		</div>
+		
+
+		<ul class="grid" ng-controller="picturesCtrl" ng-init="init('<?php echo $id_activity; ?>')">
+			<li class="picture" ng-repeat="picture in pictures">
+				<a href="pictures.php?id_picture={{picture.id_picture_activity}}">
+					<img src="{{picture.path}}" alt="{{picture.id_picture_activity}}">
+
+				</a>
+			</li>
+		</ul>
+
 	<?php
 	} else { // List of ALL activities
 	?>
@@ -32,7 +42,7 @@ require "header.php";
 			</div>
 			<ul class="grid">
 				<li class="card" ng-repeat="activity in activities | orderBy:sort.model | filter: searchField:strict | limitTo: 8" ng-show="isVisible(activity.passed)">
-					<a href="activities.php?id={{activity.id_activity}}">
+					<a href="activities.php?id_activity={{activity.id_activity}}">
 						<div class="tile-header">
 							<div class="tile-title">{{activity.title}}</div>
 						</div>

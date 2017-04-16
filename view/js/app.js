@@ -45,7 +45,7 @@ myApp.controller('picturesCtrl', ['$scope', '$http', function ($scope, $http) {
     $scope.init = function (id_activity) {
         $http.get('/trinity/controller/Pictures_Controller.php?id_activity=' + id_activity).success(function (data) {
             $scope.pictures = data;
-            console.log($scope.activities);
+            console.log($scope.pictures);
         });
     };
 }]);
