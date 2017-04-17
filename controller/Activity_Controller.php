@@ -55,7 +55,7 @@ function articles(){
 }
 
 function article($id){
-    $tmp = SPDO::getInstance()->getArticle($id);
+    $tmp = SPDO::getInstance()->getActivity($id);
 
     echo json_encode($tmp);
 }

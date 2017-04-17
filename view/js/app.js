@@ -72,3 +72,32 @@ myApp.controller('pictureCtrl', ['$scope', '$http', function ($scope, $http) {
         });
     };
 }]);
+
+
+myApp.controller('shopCtrl', ['$scope', '$http', function ($scope, $http) {
+    $scope.sort = {
+        model: null,
+        options: [
+            { value: 'price', display: "Price" },
+            { value: '-price', display: "Price (-)" },
+        ]
+    };
+    $scope.sort.model = $scope.sort.options[0].value;
+
+    $http.get('/trinity/controller/Shop_controller.php?action=all').success(function (data) {
+        $scope.products = data;
+        $scope.products.forEach(function (element) {
+            element["price"] = parseInt(element["price"]);
+        }, this);
+        console.log($scope.products);
+    });
+}]);
+
+myApp.controller('articleCtrl', ['$scope', '$http', function ($scope, $http) {
+    $scope.init = function (id_article) {
+        $http.get('/trinity/controller/Shop_controller.php?id=' + id_article).success(function (data) {
+            $scope.product = data[0];
+            console.log($scope.product);
+        });
+    }
+}]);

@@ -31,7 +31,7 @@
                             <a href="index.php">Home</a>
                             <a href="activities.php">Activities</a>
                             <a href="suggestion.php">Suggestions</a>
-                            <a href="#">Shop</a>
+                            <a href="shop.php">Shop</a>
                           </nav>
 
 

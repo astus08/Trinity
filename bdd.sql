@@ -132,14 +132,13 @@ CREATE TABLE suggestions(
 
 CREATE TABLE products(
         id_product  int (11) Auto_increment  NOT NULL ,
-        img         Varchar (25) ,
+        img         Varchar (512) ,
         title       Varchar (25) ,
         price       Int ,
         description Text ,
         quantity    Int ,
         id_category Int ,
-        PRIMARY KEY (id_product ) ,
-        UNIQUE (img ,title )
+        PRIMARY KEY (id_product )
 )ENGINE=InnoDB;
 
 

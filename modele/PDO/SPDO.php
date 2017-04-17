@@ -85,11 +85,21 @@ class SPDO
 
     /**
      * Return the information about the activity
-     * @param id of the article
+     * @param id of the activity
      * @return array
      */
-    public function getArticle($id){
+    public function getActivity($id){
         $req = $this->PDOInstance->prepare("SELECT * FROM activities WHERE id_activity = ?");
+        $req->execute(array($id));
+        $tmp = $req->fetchAll();
+        return $tmp;
+    }
+
+    public function getArticle($id){
+        $req = $this->PDOInstance->prepare("SELECT * FROM products
+                                            INNER JOIN category ON
+                                                products.id_category = category.id_category
+                                            WHERE id_product = ?");
         $req->execute(array($id));
         $tmp = $req->fetchAll();
         return $tmp;
@@ -205,6 +215,10 @@ class SPDO
         $tmp = $req->execute(array($data['id_user']));
 
         return $tmp;
+    }
+
+    public function getProducts(){
+
     }
 
     public function suggest($data){
