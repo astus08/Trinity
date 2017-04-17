@@ -169,7 +169,7 @@ ALTER TABLE products ADD CONSTRAINT FK_products_id_category FOREIGN KEY (id_cate
 
 
 INSERT INTO `activities`
-(`id_activity`, `title`,             `description`,                          `dateActivity`,         `reccurence`, `prix`, `vote_enable`,    `place`) VALUES
+(`id_activity`, `title`,                `description`,                          `dateActivity`,         `reccurence`, `prix`, `vote_enable`,    `place`) VALUES
 (1,             'Surf',                 'Du surf',                              "2017-04-11 15:50:36",  0, 30, 0,                               'lol mdr'),
 (2,             'Geek\'o bowling',      'Du bowling pour les geeks',            "2017-09-01 14:50:54",  0, 15, 0,                               'lol mdr'),
 (3,             'Natation',             'Nager comme les poissons',             "2017-12-16 15:30:42",  0, 8, 0,                                'lol mdr'),

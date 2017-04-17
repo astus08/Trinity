@@ -27,7 +27,7 @@ if (isset($_GET['id_picture'])){ // Only ONE picture of the activity
 						</label>
 					</form>
 				<?php } else { ?>
-					<p>You have voted<p>
+					<p>You like that !<p> 
 				<?php }?>
 				<p>{{picture.likes}} {{likeText}}</p>
 			</div>

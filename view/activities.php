@@ -14,9 +14,15 @@ require "header.php";
 		<br>
 
 		<div class="post-picture">
-			Post a new picture (max 10 Ko): 
-			<input type="hidden" name="MAX_FILE_SIZE" value="15360"/>
-			<input type="file" name="fileSelector" accept="image/*">
+			<form method="post" action="../controller/Pictures_Controller.php" enctype="multipart/form-data">
+				Post a new picture (max 1 Mo): 
+				<input type="text" name="action" value="newPct" class="display-none">
+				<input type="text" name="idAct" value="<?php echo $id_activity; ?>" class="display-none">
+
+				<input type="hidden" name="MAX_FILE_SIZE" value="1048576">
+				<input type="file" name="imagePost" accept="image/*" required>
+				<input type="submit" name="" value="Post this picture">
+			</form>
 		</div>
 		
 

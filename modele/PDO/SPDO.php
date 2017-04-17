@@ -146,7 +146,23 @@ class SPDO
     }
 
     /**
+     * Add a picture
+     * @param id of the activity
+     * @param the path of the picture
+     * @param id of the user (autor)
+     * @return bool
+     */
+    public function addPct($idAct, $filePath, $idUser){
+        $req = $this->PDOInstance->prepare("INSERT INTO pictures_activity(`path`, `datePictureActivity`, `id_activity`, `id_user`) VALUES (?, ?, ?, ?)");
+        $tmp = $req->execute(array($filePath, date("Y-m-d H:i:s"), $idAct, $idUser));
+
+        return $tmp;
+    }
+
+    /**
      * Like a picture
+     * @param id of the user
+     * @param id of the picture
      * @return bool
      */
     public function votePct($idUser, $idPct){
