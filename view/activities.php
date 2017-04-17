@@ -48,7 +48,7 @@ use modele\PDO\SPDO;
 
 		if (SPDO::getInstance()->isSubscribed(array($_SESSION['id'], $_GET['id_activity']))) {
 			?>
-				<form method="POST" action="../controller/Pictures_Controller.php">
+				<form method="POST" action="../controller/Activity_Controller.php">
 					<input type="text" name="id_picture_subscribe" style="display: none;" value="<?php echo $_GET['id_activity']; ?>">
 					<input type="text" name="id_user" style="display: none;" value="<?php echo $_SESSION['id']; ?>">
 					<input type="submit" name="subscribe" value="Subscribe">
@@ -62,7 +62,7 @@ use modele\PDO\SPDO;
 					<a>You're subscribed to this activities.</a><br>
 					<a>Do you want to cancel this action ?</a>
 
-					<form method="POST" action="../controller/Pictures_Controller.php">
+					<form method="POST" action="../controller/Activity_Controller.php">
 						<input type="text" name="id_picture_subscribe" style="display: none;" value="<?php echo $_GET['id_activity']; ?>">
 						<input type="text" name="id_user" style="display: none;" value="<?php echo $_SESSION['id']; ?>">
 					<input type="submit" name="cancel_subscribe" value="cancel">

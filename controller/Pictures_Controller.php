@@ -6,31 +6,7 @@ session_start();
 require '..\modele\PDO\SPDO.php';
 use modele\PDO\SPDO;
 
-if (isset($_POST['subscribe'])) {
-    var_dump($_POST);
-    $bdd = SPDO::getInstance();
-    $sub = $bdd->subscribe($_POST);
 
-    if ($sub != true) {
-        header('Location: ../view/activities.php?id_activity='.$_POST['id_picture_subscribe']."&error=subscribe");
-    }
-    else{
-        header('Location: ../view/activities.php?id_activity='.$_POST['id_picture_subscribe']);
-    }
-}
-
-if (isset($_POST['cancel_subscribe'])) {
-    var_dump($_POST);
-    $bdd = SPDO::getInstance();
-    $cancel = $bdd->cancelSubscribed($_POST);
-
-    if ($cancel != true) {
-        header('Location: ../view/activities.php?id_activity='.$_POST['id_picture_subscribe']."&error=cancel");
-    }
-    else{
-        header('Location: ../view/activities.php?id_activity='.$_POST['id_picture_subscribe']);
-    }
-}
 
 if (isset($_GET['id_activity'])){
     pictures($_GET['id_activity']);
