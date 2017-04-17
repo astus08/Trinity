@@ -8,7 +8,7 @@ use modele\PDO\SPDO;
 	if (isset($_GET['id_activity'])){
 
 		if (!isset($_SESSION['id'])) {
-			header('Location: activies.php');
+			header('Location: activities.php');
 		}
 
 		$id_activity = $_GET['id_activity'];
