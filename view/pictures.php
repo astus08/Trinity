@@ -1,6 +1,10 @@
 <?php
 require "header.php"; 
 
+if (!isset($_SESSION['id'])) {
+	header('Location: index.php');
+}
+
 require '..\modele\PDO\SPDO.php';
 use modele\PDO\SPDO;
 ?>

@@ -1,5 +1,8 @@
 <?php
 require "header.php"; 
+
+require '..\modele\PDO\SPDO.php';
+use modele\PDO\SPDO;
 ?>
 	<?php
 	if (isset($_GET['id_activity'])){
@@ -35,7 +38,35 @@ require "header.php";
 			</li>
 		</ul>
 
-	<?php
+		<?php 
+
+
+		if (SPDO::getInstance()->isSubscribed(array($_SESSION['id'], $_GET['id_activity']))) {
+			?>
+				<form method="POST" action="../controller/Pictures_Controller.php">
+					<input type="text" name="id_picture_subscribe" style="display: none;" value="<?php echo $_GET['id_activity']; ?>">
+					<input type="text" name="id_user" style="display: none;" value="<?php echo $_SESSION['id']; ?>">
+					<input type="submit" name="subscribe" value="Subscribe">
+				</form>
+			<?php
+		}
+		else{
+			?>
+
+				<div>
+					<a>You're subscribed to this activities.</a><br>
+					<a>Do you want to cancel this action ?</a>
+
+					<form method="POST" action="../controller/Pictures_Controller.php">
+						<input type="text" name="id_picture_subscribe" style="display: none;" value="<?php echo $_GET['id_activity']; ?>">
+						<input type="text" name="id_user" style="display: none;" value="<?php echo $_SESSION['id']; ?>">
+					<input type="submit" name="cancel_subscribe" value="cancel">
+				</form>
+				</div>
+
+			<?php
+		}
+
 	} else { // List of ALL activities
 	?>
 		<div ng-controller="activitiesCtrl"> 

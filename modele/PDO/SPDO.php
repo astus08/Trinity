@@ -213,6 +213,34 @@ class SPDO
 
         return $tmp;
     }
+
+    public function subscribe($data){
+        $req = $this->PDOInstance->prepare("INSERT INTO activities_subscribes(id_user, id_activity) VALUES (?,?)");
+        $tmp = $req->execute(array($data['id_user'], $data['id_picture_subscribe']));
+
+        return $tmp;
+    }
+
+    public function isSubscribed($data){
+        $req = $this->PDOInstance->prepare("SELECT * FROM activities_subscribes WHERE id_user= ? AND id_activity=?");
+        $req->execute(array($data[0], $data[1]));
+
+        $tmp = $req->fetchAll();
+
+        if (empty($tmp)) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function cancelSubscribed($data){
+        $req = $this->PDOInstance->prepare("DELETE FROM activities_subscribes WHERE id_user=? AND id_activity=?");
+        $tmp = $req->execute(array($data['id_user'], $data['id_picture_subscribe']));
+
+        return $tmp;
+    }
 }
 
 ?>
