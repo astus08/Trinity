@@ -14,6 +14,13 @@ if (isset($_GET['id_picture'])){ // Only ONE picture of the activity
 	$id_picture = $_GET['id_picture'];?>
 	<article class="presentation" ng-controller="pictureCtrl" ng-init="init('<?php echo $id_picture; ?>')">
 		<div class="picture-presentation"><img src="{{picture.path}}" alt=""></div>
+		<?php if ($_SESSION["power"] == 1) { ?>
+			<form action="../controller/Pictures_Controller.php" method="POST">
+				<input type="text" name="idPct" value="<?php echo $id_picture; ?>" class="display-none">
+				<input type="text" name="idAct" value="{{picture.id_activity}}" class="display-none">
+				<input type="submit" name="action" value="delete">
+			</form>
+		<?php }?>
 		<br>
 		<div class="author_like">
 			<div class="author">

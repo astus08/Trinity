@@ -18,6 +18,9 @@ if (isset($_GET['id_activity'])){
 } elseif (  isset($_POST['action']) && $_POST['action'] == 'comment' &&
             isset($_POST['idPct']) && isset($_POST['content'])){
     comment();
+} elseif (  isset($_POST['action']) && $_POST['action'] == 'delete' && 
+            isset($_POST['idPct']) && isset($_POST['idAct'])){
+    delete();
 } elseif (  isset($_POST['action']) && $_POST['action'] == 'newPct'){
     postPct();
 } 
@@ -48,6 +51,13 @@ function vote(){
     SPDO::getInstance()->votePct($_SESSION['id'], $_POST['idPct']);
 
     header('Location: /Trinity/view/pictures.php?id_picture='.$_POST['idPct']);
+}
+
+function delete(){
+    SPDO::getInstance()->deletePct($_POST['idPct']);
+
+
+    header('Location: /Trinity/view/activities.php?id_activity='. $_POST['idAct']);
 }
 
 function comment(){

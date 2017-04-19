@@ -110,6 +110,17 @@ class SPDO
         return $tmp;
     }
 
+    public function deletePct($id){
+        $req = $this->PDOInstance->prepare("DELETE FROM comments WHERE (`id_picture_activity` = ?)");
+        $req->execute(array($id));
+
+        $req = $this->PDOInstance->prepare("DELETE FROM likes WHERE (`id_picture_activity` = ?)");
+        $req->execute(array($id));
+
+        $req = $this->PDOInstance->prepare("DELETE FROM pictures_activity WHERE (`id_picture_activity` = ?)");
+        $req->execute(array($id));
+    }
+
     /**
      * Return the information about the picture selected
      * @param id of the picture
