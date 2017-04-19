@@ -43,12 +43,13 @@ session_start();
                             if(isset($_SESSION['id'])) {
                               echo 'Welcome '. $_SESSION['firstName']. ' '. $_SESSION['lastName']; ?>
                               <img src=<?php echo $_SESSION['avatar'] ?> alt="avatar" height="50" width="50">
-                              <a href="disconnect.php">Disconnect</a>
+                              <a href="disconnect.php">Sign out</a>
+                              <a href="settings.php">Settings</a>
                               <?php
                             } else {?>
 
-                                <a  href="home.php">Inscription</a>
-                                <a href="home.php">Connexion</a>
+                                <a  href="home.php">Sign up</a>
+                                <a href="home.php">Sign in</a>
                             <?php } ?>
                             </div>
                           </nav>

@@ -65,6 +65,11 @@ class SPDO
         $req = $this->PDOInstance->prepare("SELECT * FROM users WHERE email = ?");
         $req->execute(array($data['mail']));
         $tmp = $req->fetchAll();
+
+        if (empty($tmp)) {
+            # code...
+            header('Location: ../view/home.php?error=email');
+        }
         return $tmp[0];
     }
 
