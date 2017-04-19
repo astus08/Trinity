@@ -6,7 +6,6 @@ use modele\PDO\SPDO;
 ?>
 	<?php
 	if (isset($_GET['id_activity'])){
-
 		if (!isset($_SESSION['id'])) {
 			header('Location: activities.php');
 		}
@@ -14,7 +13,10 @@ use modele\PDO\SPDO;
 		$id_activity = $_GET['id_activity'];
 		// Present only ONE activity
 		?>
-		<article class="presentation" ng-controller="activityCtrl" ng-init="init('<?php echo $id_activity; ?>')">
+
+		<div ng-controller="activityCtrl" ng-init="init('<?php echo $id_activity; ?>')">
+
+		<article class="presentation">
 			{{activity.lastName}}
 			{{activity.id_activity}}
 		</article>
@@ -99,7 +101,9 @@ use modele\PDO\SPDO;
 			}
 		}
 		else{
-		}
+		} ?>
+		</div>
+		<?php
 
 
 
