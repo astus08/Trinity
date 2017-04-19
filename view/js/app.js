@@ -44,11 +44,11 @@ myApp.controller('activityCtrl', ['$scope', '$http', function($scope,$http) {
 
                 var dateMore = new Date(t[0], t[1] - 1, t[2]);
                 dateMore.setDate(dateMore.getDate() + 3);
-                $scope.activity["date+3"] = dateMore.getFullYear() + "-" + dateMore.getMonth() + "-" + dateMore.getDate();
+                $scope.activity["dateMore"] = dateMore.getFullYear() + "-" + dateMore.getMonth() + "-" + dateMore.getDate();
 
                 var dateLess = new Date(t[0], t[1] - 1, t[2]);
                 dateLess.setDate(dateLess.getDate() - 3);
-                $scope.activity["date-3"] = dateLess.getFullYear() + "-" + dateLess.getMonth() + "-" + dateLess.getDate();
+                $scope.activity["dateLess"] = dateLess.getFullYear() + "-" + dateLess.getMonth() + "-" + dateLess.getDate();
 
 
                 var hour = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
@@ -56,11 +56,11 @@ myApp.controller('activityCtrl', ['$scope', '$http', function($scope,$http) {
 
                 var hourMore = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
                 hourMore.setHours(hourMore.getHours() + 3);
-                $scope.activity["hour+3"] = hourMore.getHours() + ":" + hourMore.getMinutes() + ":" + hourMore.getSeconds();
+                $scope.activity["hourMore"] = hourMore.getHours() + ":" + hourMore.getMinutes() + ":" + hourMore.getSeconds();
 
                 var hourLess = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
                 hourLess.setHours(hourLess.getHours() - 3);
-                $scope.activity["hour-3"] = hourLess.getHours() + ":" + hourLess.getMinutes() + ":" + hourLess.getSeconds();
+                $scope.activity["hourLess"] = hourLess.getHours() + ":" + hourLess.getMinutes() + ":" + hourLess.getSeconds();
 
 
 
