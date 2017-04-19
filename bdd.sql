@@ -14,7 +14,7 @@ CREATE TABLE users(
         avatar    Varchar (255) ,
         email     Varchar (255) NOT NULL ,
         pwd       Varchar (255) NOT NULL ,
-        birthDate Datetime ,
+        birthDate Date ,
         id_roles  Int ,
         PRIMARY KEY (id_user )
 )ENGINE=InnoDB;
