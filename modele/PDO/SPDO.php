@@ -211,8 +211,10 @@ class SPDO
      * @return bool
      */
     public function alreadyVoted($data){
-        $req = $this->PDOInstance->prepare("SELECT * FROM activities_vote WHERE id= ?");
-        $tmp = $req->execute(array($data['id_user']));
+        $req = $this->PDOInstance->prepare("SELECT * FROM activities_vote WHERE id_user= ? AND id_activity = ?");
+        $req->execute(array($data[0], $data[1]));
+
+        $tmp = $req->fetchAll();
 
         return $tmp;
     }
@@ -252,6 +254,22 @@ class SPDO
     public function cancelSubscribed($data){
         $req = $this->PDOInstance->prepare("DELETE FROM activities_subscribes WHERE id_user=? AND id_activity=?");
         $tmp = $req->execute(array($data['id_user'], $data['id_picture_subscribe']));
+
+        return $tmp;
+    }
+
+    public function voteEnable($data){
+        $req = $this->PDOInstance->prepare("SELECT vote_enable FROM activities WHERE id_activity=?");
+        $req->execute(array($data[0]));
+
+        $tmp = $req->fetchAll();
+
+        return $tmp[0];
+    }
+
+    public function unVote($data){
+        $req = $this->PDOInstance->prepare("DELETE FROM activities_vote WHERE id_user=? AND id_activity=?");
+        $tmp = $req->execute(array($data['id_user'], $data['id_activity']));
 
         return $tmp;
     }

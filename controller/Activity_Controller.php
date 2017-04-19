@@ -47,7 +47,7 @@ function articles(){
 
     foreach (SPDO::getInstance()->query('   SELECT *
                                             FROM activities
-                                            WHERE vote_enable=0') as $line){
+                                        ') as $line){
         $rows[] = array_map('utf8_encode', $line);
     }
 

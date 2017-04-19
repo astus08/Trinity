@@ -45,7 +45,7 @@ use modele\PDO\SPDO;
 
 		<?php 
 
-
+		/** SUBSCRIBE **/
 		if (SPDO::getInstance()->isSubscribed(array($_SESSION['id'], $_GET['id_activity']))) {
 			?>
 				<form method="POST" action="../controller/Activity_Controller.php">
@@ -71,6 +71,35 @@ use modele\PDO\SPDO;
 
 			<?php
 		}
+
+		/** VOTE **/
+
+		if ((int) SPDO::getInstance()->voteEnable($_GET['id_activity'])[0]) {
+			if (empty(SPDO::getInstance()->alreadyVoted(array($_SESSION['id'],$_GET['id_activity'])))) {
+
+				?>
+					<form action="../controller/Activity_Vote_Controller.php" method="POST">
+						<input style="display: none;" type="number" name="id_user" value="<?php echo $_SESSION['id']; ?>">
+						<input style="display: none;" type="number" name="id_activity" value="<?php echo $_GET['id_activity'];//id ?>">
+						<input type="submit" name="vote" value="votez">
+					</form>
+				<?php
+			}
+			else{
+
+				?>
+					<form action="../controller/Activity_Vote_Controller.php" method="POST">
+						<input style="display: none;" type="number" name="id_user" value="<?php echo $_SESSION['id']; ?>">
+						<input style="display: none;" type="number" name="id_activity" value="<?php echo $_GET['id_activity'];//id ?>">
+						<input type="submit" name="unvote" value="unvote">
+					</form>
+				<?php
+			}
+		}
+		else{
+		}
+
+
 
 	} else { // List of ALL activities
 	?>

@@ -4,38 +4,31 @@ session_start();
 
 include '../modele/PDO/SPDO.php';
 
-var_dump(isset($_POST['id_user']) && isset($_POST['id_activity']) && isset($_POST['btn']));
-if (isset($_POST['id_user']) && isset($_POST['id_activity']) && isset($_POST['btn'])) {
-	$_POST['id_user'] = (int)$_POST['id_user'];
-	$_POST['id_activity'] = (int)$_POST['id_activity'];
+if (isset($_POST['id_user']) && isset($_POST['id_activity']) && isset($_POST['vote'])) {
+	$bdd = modele\PDO\SPDO::getInstance();
 
-	if ((is_numeric($_POST['id_user']) && !is_null($_POST['id_user'])) && (is_numeric($_POST['id_activity']) && !is_null($_POST['id_activity']))) {
+	$vote = $bdd->vote($_POST);
 
-		array_pop($_POST);
-
-
-		$bdd = modele\PDO\SPDO::getInstance();
-		
-		$isVotePossible = $bdd->alreadyVoted();
-
-		if (!$isVotePossible) {
-			# code...
-			$vote = $bdd->vote($_POST);
-
-			if ($vote == TRUE) {
-				header('Location: ../view/vote.php');
-			}else{
-				header('Location: ../view/vote.php?error=true');
-			}
-		}
-
-		header('Location: ../view/vote.php?error=already');
+	if ($vote == TRUE) {
+		header('Location: ../view/activities.php?id_activity='.$_POST['id_activity']);
+	}else{
+		header('Location: ../view/activities.php?id_activity='.$_POST['id_activity'].'&error=vote');
 	}
-	else{
-		header('Location: ../view/vote.php?error=true');
-	}
-}else{
-	header('Location: ../view/vote.php?error=true');
+
 }
+
+if (isset($_POST['id_user']) && isset($_POST['id_activity']) && isset($_POST['unvote'])) {
+	$bdd = modele\PDO\SPDO::getInstance();
+
+	$vote = $bdd->unVote($_POST);
+
+	if ($vote == TRUE) {
+		header('Location: ../view/activities.php?id_activity='.$_POST['id_activity']);
+	}else{
+		header('Location: ../view/activities.php?id_activity='.$_POST['id_activity'].'&error=unvote');
+	}
+
+}
+
 
 ?>
