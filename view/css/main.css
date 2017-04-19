@@ -101,7 +101,7 @@ a {
 }
 
 .menu_login .menu-settingsIcone:hover{
-  transform: rotate(40deg) ;
+  transform: rotate(-40deg) ;
 }
 
 
