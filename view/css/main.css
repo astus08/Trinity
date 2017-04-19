@@ -36,7 +36,8 @@ a {
   overflow: hidden;
   padding-top: 69px;
   max-width: 1016px;
-  margin: auto; }
+  margin: auto;
+  margin-bottom: 69px; }
 
 .header {
   position: fixed;
@@ -181,9 +182,6 @@ footer {
   line-height: 69px;
   color: #FFF;
   background-color: #C2242A; }
-
-.carousel {
-  margin-bottom: 69px; }
 
 .footer a {
   position: absolute;
