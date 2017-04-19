@@ -12,6 +12,9 @@ session_start();
   <link rel="stylesheet" href="owl/owl.theme.default.min.css">
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="owl/owl.carousel.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
       </head>
 
@@ -38,8 +41,10 @@ session_start();
                             <div class="menu_login">
                             <?php 
                             if(isset($_SESSION['id'])) {
-                              echo 'Welcome '. $_SESSION['firstName']. ' '. $_SESSION['lastName'];
-                              echo '<a href="disconnect.php">Disconnect</a>';
+                              echo 'Welcome '. $_SESSION['firstName']. ' '. $_SESSION['lastName']; ?>
+                              <img src=<?php echo $_SESSION['avatar'] ?> alt="avatar" height="50" width="50">
+                              <a href="disconnect.php">Disconnect</a>
+                              <?php
                             } else {?>
 
                                 <a  href="home.php">Inscription</a>
