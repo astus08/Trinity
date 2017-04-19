@@ -38,9 +38,37 @@ myApp.controller('activityCtrl', ['$scope', '$http', function($scope,$http) {
                 $scope.activity = data[0];
                 console.log($scope.activity);
                 
-                var t = $scope.activity["dateActivity"].split(' ');
-                $scope.activity["date"] = t[0];
-                $scope.activity["hour"] = t[1];
+                var t = $scope.activity["dateActivity"].split(/[-: ]/);
+                var date = new Date(t[0], t[1]-1, t[2]);
+                $scope.activity["date"] = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
+
+                var dateMore = new Date(t[0], t[1] - 1, t[2]);
+                dateMore.setDate(dateMore.getDate() + 3);
+                $scope.activity["date+3"] = dateMore.getFullYear() + "-" + dateMore.getMonth() + "-" + dateMore.getDate();
+
+                var dateLess = new Date(t[0], t[1] - 1, t[2]);
+                dateLess.setDate(dateLess.getDate() - 3);
+                $scope.activity["date-3"] = dateLess.getFullYear() + "-" + dateLess.getMonth() + "-" + dateLess.getDate();
+
+
+                var hour = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
+                $scope.activity["hour"] = hour.getHours() + ":" + hour.getMinutes() + ":" + hour.getSeconds();
+
+                var hourMore = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
+                hourMore.setHours(hourMore.getHours() + 3);
+                $scope.activity["hour+3"] = hourMore.getHours() + ":" + hourMore.getMinutes() + ":" + hourMore.getSeconds();
+
+                var hourLess = new Date(t[0], t[1] - 1, t[2], t[3], t[4], t[5]);
+                hourLess.setHours(hourLess.getHours() - 3);
+                $scope.activity["hour-3"] = hourLess.getHours() + ":" + hourLess.getMinutes() + ":" + hourLess.getSeconds();
+
+
+
+                // $scope.activity["date"] = t[0];
+                // $scope.activity["date+3"] = t[0] + 3;
+                // $scope.activity["date-3"] = t[0] + 3;
+
+                // $scope.activity["hour"] = t[1];
 
         });
     };
