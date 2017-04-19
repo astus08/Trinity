@@ -199,8 +199,8 @@ class SPDO
      * @return bool
      */
     public function vote($data){
-        $req = $this->PDOInstance->prepare("INSERT INTO activities_vote(`dateVote`, `id_user`, `id_activity`) VALUES (?,?,?)");
-        $tmp = $req->execute(array(date("Y-m-d H:i:s"),$data['id_user'], $data['id_activity']));
+        $req = $this->PDOInstance->prepare("INSERT INTO activities_vote(`dateVote`, `id_user`, `id_activity`, `date_sugg_vote`, `time_sugg_vote`) VALUES (?,?,?,?,?)");
+        $tmp = $req->execute(array(date("Y-m-d H:i:s"),$data['id_user'], $data['id_activity'], $data['date'], $data['time']));
 
         return $tmp;
     }
