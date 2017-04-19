@@ -36,13 +36,17 @@ if (isset($_GET['id_picture'])){ // Only ONE picture of the activity
 				<p>{{picture.likes}} {{likeText}}</p>
 			</div>
 		</div>
-		Post a new comment :
-		<form action="../controller/Pictures_Controller.php" method="POST">
-			<input type="text" name="action" value="comment" class="display-none">
-			<input type="text" name="idPct" value="<?php echo $id_picture; ?>" class="display-none">
-			<textarea name="content" cols="50" rows="10" required></textarea>
-			<input type="submit" name="btn" value="Post">
-		</form>
+		<div class="container-comment">
+			<link rel="stylesheet" type="text/css" href="css/main.css">
+			Post a new comment :
+
+			<form style="width: 80%; margin:0 auto; padding-right: 0;" action="../controller/Pictures_Controller.php" method="POST" id="form-activity">
+				<input type="text" name="action" value="comment" class="display-none">
+				<input type="text" name="idPct" value="<?php echo $id_picture; ?>" class="display-none">
+				<textarea class="text-box-comment" name="content" cols="50" rows="10" required></textarea>
+				<input class="btn-login-comment" type="submit" name="btn" value="Post">
+			</form>
+		</div>
 		<ul class="commentsList">
 			<li class="comment" ng-repeat="comment in comments">
 				{{comment.content}} Posted by {{comment.firstName}} {{comment.lastName}} at {{comment.dateComment}}
