@@ -122,7 +122,7 @@ a {
 }
 
 
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 770px) {
   .div_img img {
     top: 0;
     right: 0;
@@ -176,25 +176,49 @@ a {
     left: 15px;
     box-shadow: 0 10px 0 1px #FFF, 0 16px 0 1px #FFF, 0 22px 0 1px #FFF; }
   .menu {
-    /*position: absolute;*/
+    position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 100%;
+    width: 250px;
     background-color: #C2242A;
     -webkit-transform: translateX(-250px);
     transform: translateX(-250px); 
-    line-height: 69px;}
-  .menu a {
+    line-height: 69px;
+    z-index: 10000;}
+  .menu a.directLink {
     display: block;
     height: 40px;
     background-color: #C2242A;
     text-align: center;
-    line-height: 60px;
+    line-height: 40px;
     border-bottom: 1px solid #ff8080; }
-  .menu_login {
-    background-color: #C2242A;
-    text-align: center;}
+
+    .menu > .menu_login{
+      display: block;
+      float: none;
+    }
+    .menu_login .text-menu{
+      text-align: center;
+    }
+    .menu_login .menu-avatar{
+      margin: 0 auto;
+    }
+    .menu_login .menu-settingsIcon{
+      display: inline-block;
+      height: 51px;width: 51px;
+      margin: 0 auto;
+      position: relative;
+      margin-top: 10px;
+    }
+    .menu_login .menu-disconnectIcon{
+      display: inline-block;
+      height: 51px;width: 51px;
+      margin: 0 auto;
+      position: relative;
+      margin-top: 10px;
+      
+    }
 
   .width--sidebar .site-pusher {
     -webkit-transform: translateX(250px);

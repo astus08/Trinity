@@ -34,10 +34,10 @@ session_start();
                           </div>
 
                           <nav class="menu">
-                            <a href="index.php">Home</a>
-                            <a href="activities.php">Activities</a>
-                            <a href="suggestion.php">Suggestions</a>
-                            <a href="shop.php">Shop</a>
+                            <a href="index.php" class="directLink">Home</a>
+                            <a href="activities.php" class="directLink">Activities</a>
+                            <a href="suggestion.php" class="directLink">Suggestions</a>
+                            <a href="shop.php" class="directLink">Shop</a>
                             <div class="menu_login">
                             <?php 
                             if(isset($_SESSION['id'])) {
