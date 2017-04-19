@@ -1,5 +1,6 @@
-<?php session_start(); ?>
-
+<?php
+session_start(); 
+?>
 <!DOCTYPE html>
     <html>
       <head>
@@ -7,6 +8,8 @@
         <title>Site Web BDE</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" href="owl/owl.carousel.min.css">
+  <link rel="stylesheet" href="owl/owl.theme.default.min.css">
         
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
@@ -31,25 +34,23 @@
                             <a href="index.php">Home</a>
                             <a href="activities.php">Activities</a>
                             <a href="suggestion.php">Suggestions</a>
-                            <a href="shop.php">Shop</a>
-                          </nav>
-
-
-
-                          <nav class="menu2">
+                            <a href="#">Shop</a>
+                            <div class="menu_login">
                             <?php 
                             if(isset($_SESSION['id'])) {
                               echo 'Welcome '. $_SESSION['firstName']. ' '. $_SESSION['lastName'];
-                              ?>
-                                <img src=<?php echo $_SESSION['avatar'] ?> alt="avatar" height="50" width="50">
-                                <a href="disconnect.php">Disconnect</a>
-
-                              <?php 
+                              echo '<a href="disconnect.php">Disconnect</a>';
                             } else {?>
-                                <a href="home.php">Inscription</a>
+
+                                <a  href="home.php">Inscription</a>
                                 <a href="home.php">Connexion</a>
                             <?php } ?>
+                            </div>
                           </nav>
+
+
+
+
                         
 
 

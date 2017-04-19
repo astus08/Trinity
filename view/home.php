@@ -15,24 +15,66 @@ else{
 
 
 
-<h1>hello home </h1>
+
 
 <!-- Connexion FORM -->
-<form method="POST" action="../controller/Connexion_Controller.php">
-	<input type="email" name="mail" label="email">
-	<input type="password" name="pwd" label="password">
-	<input type="submit" name="btn" value="submit">
-</form>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/home_style2.css">
+
+</head>
+<div class="container">
+		<img src="images/matureman.png">
+			<form method="POST" action="../controller/Connexion_Controller.php">
+					<div class="form-email">
+						<input type="email" name="mail" label="email" value="e-mail">
+					</div>
+
+					<div class="form-password">
+						<input type="password" name="pwd" label="password" >
+					</div>
+
+					
+						<input class="btn-login" type="submit" name="btn" value="Login">
+					
+			</form>
+</div>
+
+
+
 
 <!-- Inscription FORM -->
-<form method="POST" action="../controller/Connexion_Controller.php">
-	<input type="text" name="lastName" label="lastName">
-	<input type="text" name="firstName" label="firstName">
-	<input type="email" name="mail" label="email">
-	<input type="password" name="pwd" label="password">
-	<input type="password" name="pwd_repeat" label="password_repeat">
-	<input type="submit" name="btn" value="submit">
-</form>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/home_style2.css">
+</head>
+
+<div class="container">
+	<img src="images/female.png">
+	<form method="POST" action="../controller/Connexion_Controller.php">
+		<div class="form-user">
+			<input type="text" value="lastname" name="lastName" label="lastName">
+		</div>
+
+		<div class="form-user">
+			<input type="text" value="first name" name="firstName" label="firstName">
+		</div>
+
+
+		<div class="form-email">
+		<input type="email"  name="mail" label="email">
+		</div>
+
+		<div class="form-password">
+		<input type="password"  name="pwd" label="password">
+		</div>
+
+		<div class="form-password">
+		<input type="password" name="pwd_repeat" label="password_repeat">
+		</div>
+		<input  class="btn-login" type="submit" name="btn" value="S'inscire">
+	</form>
+</div>
 
 
 <?php
