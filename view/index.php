@@ -15,7 +15,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   <div><img src="images/4ltrophy.jpg"></div>
   <div><img src="images/cube.jpeg"></div>
   <div><img src="images/imprimante3d.jpg"></div>
-  <div><img src="images/dybala_messi.jpg"></div>
+  
 </div>
 
 
