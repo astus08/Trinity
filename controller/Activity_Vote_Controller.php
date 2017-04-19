@@ -4,7 +4,10 @@ session_start();
 
 include '../modele/PDO/SPDO.php';
 
-if (isset($_POST['id_user']) && isset($_POST['id_activity']) && isset($_POST['vote'])) {
+var_dump(strlen($_POST['date']));
+exit();
+
+if (isset($_POST['id_user']) && isset($_POST['id_activity']) && isset($_POST['vote']) && isset['date']) {
 	$bdd = modele\PDO\SPDO::getInstance();
 
 	$vote = $bdd->vote($_POST);

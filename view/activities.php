@@ -83,8 +83,8 @@ use modele\PDO\SPDO;
 					<form action="../controller/Activity_Vote_Controller.php" method="POST">
 						<input style="display: none;" type="number" name="id_user" value="<?php echo $_SESSION['id']; ?>">
 						<input style="display: none;" type="number" name="id_activity" value="<?php echo $_GET['id_activity'];//id ?>">
-						<input type="date" name="date" min="{{activity.}}">
-						<input type="time" name="time">
+						<input type="date" name="date" min="{{activity.dateLess}}" max="{{activity.dateMore}}" value="{{activity.date}}">
+						<input type="time" name="time" min="{{activity.hourLess}}" max="{{activity.hourMore}}" value="{{activity.hour}}">
 						<input type="submit" name="vote" value="votez">
 					</form>
 				<?php
