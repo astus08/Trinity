@@ -42,6 +42,7 @@ elseif(isset($_POST['mail']) && isset($_POST['pwd'])){
 				$_SESSION['firstName'] = $connexion['firstName'];
 				$_SESSION['lastName'] = $connexion['lastName'];
 				$_SESSION['avatar'] = $connexion['avatar'];
+				$_SESSION['power'] = $connexion['id_roles'];
 
 				var_dump($_SESSION);
 				header('Location: ../view/home.php');
