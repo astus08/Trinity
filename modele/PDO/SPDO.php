@@ -273,6 +273,30 @@ class SPDO
 
         return $tmp;
     }
+
+    public function settingsBirth($data){
+        $req = $this->PDOInstance->prepare("UPDATE users SET birthDate = ? WHERE id_user = ?");
+        $tmp = $req->execute(array($data['birth_date'],$data['id_user']));
+
+        return $tmp;
+    }
+
+    public function getBirth($data){
+        $req = $this->PDOInstance->prepare("SELECT birthDate FROM users WHERE id_user = ?");
+        $req->execute(array($data[0]));
+
+        $tmp = $req->fetchAll();
+
+        return $tmp[0];
+    }
+
+    public function settingsPicture($data){
+
+        $req = $this->PDOInstance->prepare("UPDATE users SET avatar = ? WHERE id_user = ?");
+        $tmp = $req->execute(array($data[0],$data[1]));
+
+        return $tmp;
+    }
 }
 
 ?>
