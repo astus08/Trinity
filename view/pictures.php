@@ -40,7 +40,7 @@ if (isset($_GET['id_picture'])){ // Only ONE picture of the activity
 		<form action="../controller/Pictures_Controller.php" method="POST">
 			<input type="text" name="action" value="comment" class="display-none">
 			<input type="text" name="idPct" value="<?php echo $id_picture; ?>" class="display-none">
-			<textarea name="content" cols="50" rows="10"></textarea>
+			<textarea name="content" cols="50" rows="10" require></textarea>
 			<input type="submit" name="btn" value="Post">
 		</form>
 		<ul class="commentsList">
