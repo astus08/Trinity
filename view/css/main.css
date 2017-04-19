@@ -79,6 +79,7 @@ a {
   position: relative;
   height: 69px;
   width: 51px;
+  margin: 0 10px;
 }
 
 .menu_login .menu-avatar img{
@@ -88,19 +89,35 @@ a {
   width: 51px;
 }
 
-.menu_login .menu-settingsIcone {
+.menu_login .menu-disconnectIcon {
   width:51px;
   transition-duration: 0.5s;
 }
 
-.menu_login .menu-settingsIcone svg{
+.menu_login .menu-disconnectIcon svg{
   position: absolute;
   top: 8px;
   height: 51px;
   width: 51px;
 }
 
-.menu_login .menu-settingsIcone:hover{
+.menu_login .menu-disconnectIcon:hover{
+  transform: scale(1.1);
+}
+
+.menu_login .menu-settingsIcon {
+  width:51px;
+  transition-duration: 0.5s;
+}
+
+.menu_login .menu-settingsIcon svg{
+  position: absolute;
+  top: 8px;
+  height: 51px;
+  width: 51px;
+}
+
+.menu_login .menu-settingsIcon:hover{
   transform: rotate(-40deg) ;
 }
 
