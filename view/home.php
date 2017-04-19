@@ -27,11 +27,11 @@ else{
 		<img src="images/matureman.png">
 			<form method="POST" action="../controller/Connexion_Controller.php">
 					<div class="form-email">
-						<input type="email" name="mail" label="email" value="e-mail">
+						<input type="email" name="mail" label="email" placeholder="e-mail">
 					</div>
 
 					<div class="form-password">
-						<input type="password" name="pwd" label="password" >
+						<input type="password" name="pwd" label="password" placeholder="Password">
 					</div>
 
 					
@@ -53,24 +53,24 @@ else{
 	<img src="images/female.png">
 	<form method="POST" action="../controller/Connexion_Controller.php">
 		<div class="form-user">
-			<input type="text" value="lastname" name="lastName" label="lastName">
+			<input type="text" placeholder="Last name" name="lastName" label="lastName">
 		</div>
 
 		<div class="form-user">
-			<input type="text" value="first name" name="firstName" label="firstName">
+			<input type="text" placeholder="First name" name="firstName" label="firstName">
 		</div>
 
 
 		<div class="form-email">
-		<input type="email"  name="mail" label="email">
+		<input type="email"  name="mail" label="email" placeholder="e-mail">
 		</div>
 
 		<div class="form-password">
-		<input type="password"  name="pwd" label="password">
+		<input type="password"  name="pwd" label="password" placeholder="Password">
 		</div>
 
 		<div class="form-password">
-		<input type="password" name="pwd_repeat" label="password_repeat">
+		<input type="password" name="pwd_repeat" label="password_repeat" placeholder="Password confirmation">
 		</div>
 		<input  class="btn-login" type="submit" name="btn" value="S'inscire">
 	</form>
