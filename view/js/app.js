@@ -37,6 +37,11 @@ myApp.controller('activityCtrl', ['$scope', '$http', function($scope,$http) {
         $http.get('/trinity/controller/Activity_Controller.php?id='+id).success(function(data) {
                 $scope.activity = data[0];
                 console.log($scope.activity);
+                
+                var t = $scope.activity["dateActivity"].split(' ');
+                $scope.activity["date"] = t[0];
+                $scope.activity["hour"] = t[1];
+
         });
     };
 }]);
