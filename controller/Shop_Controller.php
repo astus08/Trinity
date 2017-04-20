@@ -1,8 +1,23 @@
 <?php 
+
 namespace controller;
 
+session_start();
 require '..\modele\PDO\SPDO.php';
 use modele\PDO\SPDO;
+
+
+if (isset($_POST['buy']) && isset($_POST['id_product'])) {
+    if (isset($_SESSION['basket'])) {
+        # code...
+    }else{
+        $_SESSION['basket'] = array();
+    }
+    $_SESSION['basket'][] = $_POST['id_product'];
+
+    header('Location: ../view/shop.php');
+}
+
 
 if (isset($_GET['action'])){
     switch($_GET['action']){

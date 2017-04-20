@@ -5,6 +5,13 @@ if (!isset($_SESSION['id'])) {
 	header('Location: index.php');
 } 
 
+if (!empty($_SESSION['basket']) && isset($_SESSION['basket'])) {
+    # code...
+    ?>
+        <a href="cart.php"><img src="images/cart.svg" style="width: 50px;"/> </a>
+    <?php
+}
+
 if (isset($_GET['id_product'])){ 
     $idProduct = $_GET['id_product']; ?>
 
@@ -12,7 +19,10 @@ if (isset($_GET['id_product'])){
         {{product.title}} {{product.price}} € {{product.categoryName}}
     </article>
 
-    <input type="button" name="" value="buy">
+    <form action="../controller/Shop_Controller.php" method="POST">
+        <input style="display: none;" name="id_product" type="text" value="<?php echo $_GET['id_product']; ?>">
+        <input type="submit" name="buy" value="buy">
+    </form>
 
 <?php } else { ?>
 
@@ -26,9 +36,9 @@ if (isset($_GET['id_product'])){
         <input type="text" class="research-field" ng-model="searchField.title" value="" placeholder="Search">
 	</div>
     <ul class="grid">
-        <li class="product" ng-repeat="product in products">
+        <li class="product" ng-repeat="product in products" >
             <a href="shop.php?id_product={{product.id_product}}">
-				<img src="{{product.img}}" alt="{{picture.id_product}}">
+				<img src="{{product.img}}" alt="{{picture.id_product}}" style="width: 200px; height: 200px;">
                 {{product.title}} {{product.price}} € {{product.categoryName}}
 			</a>
         </li>
