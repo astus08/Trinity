@@ -113,7 +113,7 @@ use modele\PDO\SPDO;
 
 	} else { // List of ALL activities
 	?>
-		<div ng-controller="activitiesCtrl"> 
+		<div ng-controller="activitiesCtrl" ng-init="init('<?php echo $_SESSION["power"]; ?>')"> 
 			<div class="options"> Oder by :
 				<select name="order" ng-model="sort.model">
 					<option ng-repeat="option in sort.options" value="{{option.value}}">{{option.display}}</option>
