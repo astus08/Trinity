@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 require '..\modele\PDO\SPDO.php';
 use modele\PDO\SPDO;
 

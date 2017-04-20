@@ -1,14 +1,17 @@
 <?php
-require "header.php"; 
+session_start(); 
+if (!isset($_SESSION['id']) && isset($_GET['id_activity'])) {
+			header('Location: activities.php');
+		}
+include "header.php"; 
+
 
 require '..\modele\PDO\SPDO.php';
 use modele\PDO\SPDO;
 ?>
 	<?php
 	if (isset($_GET['id_activity'])){
-		if (!isset($_SESSION['id'])) {
-			header('Location: activities.php');
-		}
+		
 
 		$id_activity = $_GET['id_activity'];
 		// Present only ONE activity

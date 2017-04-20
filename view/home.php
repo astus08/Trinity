@@ -1,5 +1,5 @@
 <?php
-
+session_start(); 
 require "header.php";
 
 if (isset($_SESSION['id'])) {
@@ -24,6 +24,12 @@ else{
 <link rel="stylesheet" type="text/css" href="css/home_style2.css">
 
 </head>
+<?php 
+if(isset($_GET['action'])&& $_GET['action']=='connect'){
+
+
+
+?>
 <div class="container">
 		<img src="images/matureman.png">
 			<form method="POST" action="../controller/Connexion_Controller.php">
@@ -41,14 +47,16 @@ else{
 			</form>
 </div>
 
+<?php
+
+}else{
+
+
+?>
 
 
 
 <!-- Inscription FORM -->
-<head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/home_style2.css">
-</head>
 
 <div class="container">
 	<img src="images/female.png">
@@ -78,6 +86,8 @@ else{
 </div>
 
 
+
 <?php
+}
 require "footer.php";
 ?>

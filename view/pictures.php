@@ -1,4 +1,5 @@
 <?php
+session_start(); 
 require "header.php"; 
 
 if (!isset($_SESSION['id'])) {

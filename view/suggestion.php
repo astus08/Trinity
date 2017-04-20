@@ -1,11 +1,11 @@
 <?php
-
-require 'header.php';
-
+session_start(); 
 if (!isset($_SESSION['id'])) {
 	# code...
 	header('Location: index.php');
 }
+require 'header.php';
+
 ?>
 
 <head>

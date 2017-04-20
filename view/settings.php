@@ -1,5 +1,5 @@
 <?php
-
+session_start(); 
 require "header.php"; 
 
 include '../modele/PDO/SPDO.php';

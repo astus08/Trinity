@@ -1,5 +1,5 @@
 <?php
-session_start(); 
+
 ?>
 <!DOCTYPE html>
     <html>
@@ -52,8 +52,8 @@ session_start();
                             <?php
                             } else {?>
 
-                                <a href="home.php">Sign up</a>
-                                <a href="home.php">Sign in</a>
+                                <a href="home.php?action=connect">Sign up</a>
+                                <a href="home.php?action=subscribe">Sign in</a>
 
                                  <!--<a href="settings.php" class="menu-settingsIcon">
                                 <svg version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 478.703 478.703" style="enable-background:new 0 0 478.703 478.703;" xml:space="preserve" width="51px" height="51px">
@@ -73,7 +73,9 @@ session_start();
                                 </g>
                                 </svg>
                             </a>-->
-                            <?php } ?>
+                            <?php 
+                            } 
+                            ?>
                             </div>
                           </nav>
 

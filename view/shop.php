@@ -1,9 +1,6 @@
 <?php
+session_start(); 
 require "header.php"; 
-
-if (!isset($_SESSION['id'])) {
-	header('Location: index.php');
-} 
 
 if (!empty($_SESSION['basket']) && isset($_SESSION['basket'])) {
     # code...
@@ -21,7 +18,14 @@ if (isset($_GET['id_product'])){
 
     <form action="../controller/Shop_Controller.php" method="POST">
         <input style="display: none;" name="id_product" type="text" value="<?php echo $_GET['id_product']; ?>">
-        <input type="submit" name="buy" value="buy">
+        <?php
+        if (isset($_SESSION['id'])) {
+            echo '<input type="submit" name="buy" value="buy">';
+        } 
+        else {
+            echo "<h2>Please connect you for any product order !</h2>";
+        }
+        ?>
     </form>
 
 <?php } else { ?>

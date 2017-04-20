@@ -11,7 +11,7 @@
         <footer>
         
                           <nav class="menu_footer">
-                            <a href="#">Mentions legales</a>
+                            <a href="mentions_legales.html">Mentions legales</a>
                             <a href="#">Nous contacter</a>
                             <a href="#">Informations</a>
                           </nav>
