@@ -40,7 +40,7 @@ if (isset($_GET['id_product'])){
         <input type="text" class="research-field" ng-model="searchField.title" value="" placeholder="Search">
 	</div>
     <ul class="grid">
-        <li class="product" ng-repeat="product in products" >
+        <li class="product" ng-repeat="product in products | orderBy:sort.model | filter: searchField:strict" >
             <a href="shop.php?id_product={{product.id_product}}">
 				<img src="{{product.img}}" alt="{{picture.id_product}}" style="width: 200px; height: 200px;">
                 {{product.title}} {{product.price}} € {{product.categoryName}}
