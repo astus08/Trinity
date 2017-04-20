@@ -199,6 +199,13 @@ class SPDO
         return $tmp;
     }
 
+    public function unvotePct($idUser, $idPct){
+        $req = $this->PDOInstance->prepare("DELETE FROM likes WHERE `id_user` = ? AND `id_picture_activity` = ?");
+        $tmp = $req->execute(array($idUser, $idPct));
+
+        return $tmp;
+    }
+
     /**
      * Comment a picture
      * @return bool

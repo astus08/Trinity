@@ -15,6 +15,9 @@ if (isset($_GET['id_activity'])){
 } elseif (  isset($_POST['action']) && $_POST['action'] == 'vote' &&
             isset($_POST['idPct'])){
     vote();
+} elseif (  isset($_POST['action']) && $_POST['action'] == 'unvote' &&
+            isset($_POST['idPct'])){
+    unvote();
 } elseif (  isset($_POST['action']) && $_POST['action'] == 'comment' &&
             isset($_POST['idPct']) && isset($_POST['content'])){
     comment();
@@ -49,6 +52,12 @@ function picture($id_picture){
 
 function vote(){
     SPDO::getInstance()->votePct($_SESSION['id'], $_POST['idPct']);
+
+    header('Location: /Trinity/view/pictures.php?id_picture='.$_POST['idPct']);
+}
+
+function unvote(){
+    SPDO::getInstance()->unvotePct($_SESSION['id'], $_POST['idPct']);
 
     header('Location: /Trinity/view/pictures.php?id_picture='.$_POST['idPct']);
 }
