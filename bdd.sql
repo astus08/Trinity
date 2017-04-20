@@ -273,11 +273,11 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id_user`, `lastName`, `firstName`, `avatar`, `email`, `pwd`, `birthDate`, `id_roles`) VALUES
 (1, 'admin', 'admin', 'images/avatar/uploads/bender__futurama_by_supernaturalsarah.jpg', 'admin@admin.admin', '$2y$10$mncWy40DNBmODe9cLRkvuud2HTbqgjYWruQnRytA.W4ApVZT4sWhe', '1997-06-30', 1),
-(2, 'test1', 'firstName1', 'images/avatar/default.png', 'test1@test.test', '$2y$10$mAHByzd2wfZcNpfS1vGpHeOsk0LU1chy62IxdvJZkqn0qQJl2SLaq', NULL, 1),
-(3, 'test2', 'firstName2', 'images/avatar/default.png', 'test2@test.test', '$2y$10$mAHByzd2wfZcNpfS1vGpHeOsk0LU1chy62IxdvJZkqn0qQJl2SLaq', NULL, 1),
-(4, 'test3', 'firstName3', 'images/avatar/default.png', 'test3@test.test', '$2y$10$mAHByzd2wfZcNpfS1vGpHeOsk0LU1chy62IxdvJZkqn0qQJl2SLaq', NULL, 1),
-(5, 'test4', 'firstName4', 'images/avatar/default.png', 'test4@test.test', '$2y$10$mAHByzd2wfZcNpfS1vGpHeOsk0LU1chy62IxdvJZkqn0qQJl2SLaq', NULL, 1),
-(6, 'test5', 'firstName5', 'images/avatar/default.png', 'test5@test.test', '$2y$10$mAHByzd2wfZcNpfS1vGpHeOsk0LU1chy62IxdvJZkqn0qQJl2SLaq', NULL, 1);
+(2, 'test1', 'firstName1', 'images/avatar/default.png', 'test1@test.test', '$2y$10$mAHByzd2wfZcNpfS1vGpHeOsk0LU1chy62IxdvJZkqn0qQJl2SLaq', NULL, 2),
+(3, 'test2', 'firstName2', 'images/avatar/default.png', 'test2@test.test', '$2y$10$mAHByzd2wfZcNpfS1vGpHeOsk0LU1chy62IxdvJZkqn0qQJl2SLaq', NULL, 2),
+(4, 'test3', 'firstName3', 'images/avatar/default.png', 'test3@test.test', '$2y$10$mAHByzd2wfZcNpfS1vGpHeOsk0LU1chy62IxdvJZkqn0qQJl2SLaq', NULL, 2),
+(5, 'test4', 'firstName4', 'images/avatar/default.png', 'test4@test.test', '$2y$10$mAHByzd2wfZcNpfS1vGpHeOsk0LU1chy62IxdvJZkqn0qQJl2SLaq', NULL, 2),
+(6, 'test5', 'firstName5', 'images/avatar/default.png', 'test5@test.test', '$2y$10$mAHByzd2wfZcNpfS1vGpHeOsk0LU1chy62IxdvJZkqn0qQJl2SLaq', NULL, 2);
 
 --
 -- Index pour les tables exportées
