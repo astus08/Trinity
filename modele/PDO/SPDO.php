@@ -313,6 +313,14 @@ class SPDO
 
         return $tmp;
     }
+
+    public function findProduct($data){
+        $req = $this->PDOInstance->prepare("SELECT title, price FROM products WHERE id_product = ?");
+        $req->execute(array($data));
+
+        $tmp = $req->fetchAll();
+        return $tmp[0];
+    }
 }
 
 ?>
