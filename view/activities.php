@@ -38,13 +38,10 @@ use modele\PDO\SPDO;
 
 		<ul class="grid" ng-controller="picturesCtrl" ng-init="init('<?php echo $id_activity; ?>')">
 			<li class="picture" ng-repeat="picture in pictures">
-					<a href="pictures.php?id_picture={{picture.id_picture_activity}}">
-						<img src="{{picture.path}}" alt="{{picture.id_picture_activity}}">
+				<a href="pictures.php?id_picture={{picture.id_picture_activity}}">
+					<img src="{{picture.path}}" alt="{{picture.id_picture_activity}}">
 
-					</a>
-				<menu type="context" id="rightclickmenu">
-					<menuitem type="checkbox" label="I ♥ HTML5.1.">
-				</menu>
+				</a>
 			</li>
 		</ul>
 
