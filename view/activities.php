@@ -129,11 +129,6 @@ use modele\PDO\SPDO;
 						</div>
 						<div class="tile-mainPart">
 							<span class="tile-description">{{activity.description}}</span>
-							<?php
-								if ($_SESSION['power'] == 1) {
-									
-								}
-							?>
 						</div>
 						<div class="tile-footer">
 							<div class="date">
@@ -141,6 +136,9 @@ use modele\PDO\SPDO;
 								<span class="tile-hour">{{activity.hour}}</span>
 							</div>
 							<div class="price"><span class="tile-price">{{activity.prix}} €</span></div>
+							<?php if($_SESSION['power'] == 1) { ?>
+								<div class="nbSub"><span class="tile-nbSub">{{activity.nbSub}} {{activity.subText}}</span></div>
+							<?php } ?>
 						</div>
 							
 

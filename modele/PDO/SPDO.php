@@ -94,7 +94,8 @@ class SPDO
      * @return array
      */
     public function getActivity($id){
-        $req = $this->PDOInstance->prepare("SELECT * FROM activities WHERE id_activity = ?");
+        $req = $this->PDOInstance->prepare("SELECT * FROM activities 
+                                            WHERE id_activity = ?");
         $req->execute(array($id));
         $tmp = $req->fetchAll();
         return $tmp;

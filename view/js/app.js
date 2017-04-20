@@ -6,6 +6,8 @@ myApp.controller('activitiesCtrl', ['$scope', '$http', function ($scope, $http) 
         options: [
             {value: 'prix' , display: "Price"},
             {value: '-prix', display: "Price (-)"},
+            {value: 'dateJS', display: "Date"},
+            {value: '-dateJS', display: "Date (-)"},
             ]
     };
     $scope.sort.model = $scope.sort.options[0].value;
@@ -17,8 +19,11 @@ myApp.controller('activitiesCtrl', ['$scope', '$http', function ($scope, $http) 
             var t             = element["dateActivity"].split(/[-: ]/);
             element["date"]   = t[2] + "/" + t[1] + "/" + t[0];
             element["hour"]   = t[3] + ":" + t[4];
-            element["passed"] = new Date(Date.UTC(t[0], t[1] - 1, t[2], t[3], t[4], t[5])) < Date.now();
+            element["dateJS"] = new Date(Date.UTC(t[0], t[1] - 1, t[2], t[3], t[4], t[5]));
+            element["passed"] = element["date"] < Date.now();
             element["prix"] = parseInt(element["prix"]);
+
+            element["subText"] = element["nbSub"] > 1 ? "subs" : "sub";
         }, this);
         console.log($scope.activities);
     });

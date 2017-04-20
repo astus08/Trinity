@@ -45,8 +45,10 @@ function articles(){
 
     $rows = array();
 
-    foreach (SPDO::getInstance()->query('   SELECT *
-                                            FROM activities
+    foreach (SPDO::getInstance()->query('   SELECT activities.*, COUNT(activities_subscribes.id_activity) AS nbSub FROM activities
+                                            LEFT JOIN activities_subscribes ON
+                                                activities_subscribes.id_activity = activities.id_activity
+                                            GROUP BY activities.id_activity
                                         ') as $line){
         $rows[] = array_map('utf8_encode', $line);
     }
