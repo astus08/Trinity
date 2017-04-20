@@ -20,8 +20,9 @@ use modele\PDO\SPDO;
 		<div ng-controller="activityCtrl" ng-init="init('<?php echo $id_activity; ?>')">
 
 		<article class="presentation">
-			{{activity.lastName}}
-			{{activity.id_activity}}
+			{{activity.title}}
+			<br>
+			{{activity.description}}
 		</article>
 
 		<br>
@@ -128,6 +129,11 @@ use modele\PDO\SPDO;
 						</div>
 						<div class="tile-mainPart">
 							<span class="tile-description">{{activity.description}}</span>
+							<?php
+								if ($_SESSION['power'] == 1) {
+									
+								}
+							?>
 						</div>
 						<div class="tile-footer">
 							<div class="date">

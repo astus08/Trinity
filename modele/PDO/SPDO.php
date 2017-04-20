@@ -127,7 +127,7 @@ class SPDO
      * @return array
      */
     public function getPicture($id){
-        $req = $this->PDOInstance->prepare("SELECT *, (SELECT COUNT(*) AS compteur FROM likes WHERE id_picture_activity = ?) AS likes FROM pictures_activity
+        $req = $this->PDOInstance->prepare("SELECT pictures_activity.*, users.id_user, users.lastName, users.firstName, users.avatar, users.email, users.birthDate, users.id_roles, (SELECT COUNT(*) AS compteur FROM likes WHERE id_picture_activity = ?) AS likes FROM pictures_activity
                                             INNER JOIN users ON
                                                 pictures_activity.id_user = users.id_user
                                             WHERE id_picture_activity = ?");
@@ -143,7 +143,7 @@ class SPDO
      * @return array
      */
     public function getComments($id){
-        $req = $this->PDOInstance->prepare("SELECT * FROM comments 
+        $req = $this->PDOInstance->prepare("SELECT comments.*, users.id_user, users.lastName, users.firstName, users.avatar, users.email, users.birthDate, users.id_roles FROM comments 
                                             INNER JOIN users ON
                                                 comments.id_user = users.id_user
                                             WHERE id_picture_activity = ?");
@@ -321,6 +321,7 @@ class SPDO
         $tmp = $req->fetchAll();
         return $tmp[0];
     }
+
 }
 
 ?>
