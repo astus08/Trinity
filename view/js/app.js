@@ -35,6 +35,13 @@ myApp.controller('activitiesCtrl', ['$scope', '$http', function ($scope, $http) 
             return passed;
         }
     }
+
+    $scope.init = function (id_user) {
+        if (id_user == 1){
+            $scope.sort.options.push({ value: 'nbSub', display: "Sub number" });
+            $scope.sort.options.push({ value: '-nbSub', display: "Sub number (-)" });
+        }
+    }
 }]);
 
 myApp.controller('activityCtrl', ['$scope', '$http', function($scope,$http) {
