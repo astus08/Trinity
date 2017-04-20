@@ -2,7 +2,14 @@
 session_start(); 
 if (!isset($_SESSION['id']) && isset($_GET['id_activity'])) {
 			header('Location: activities.php');
-		}
+}
+
+if (isset($_SESSION['power']) && $_SESSION['power']==1){
+	$power = 1;
+} else {
+	$power = 0;
+}
+
 include "header.php"; 
 
 
@@ -113,7 +120,7 @@ use modele\PDO\SPDO;
 
 	} else { // List of ALL activities
 	?>
-		<div ng-controller="activitiesCtrl" ng-init="init('<?php echo $_SESSION["power"]; ?>')"> 
+		<div ng-controller="activitiesCtrl" ng-init="init('<?php echo $power; ?>')"> 
 			<div class="options"> Oder by :
 				<select name="order" ng-model="sort.model">
 					<option ng-repeat="option in sort.options" value="{{option.value}}">{{option.display}}</option>
@@ -136,7 +143,7 @@ use modele\PDO\SPDO;
 								<span class="tile-hour">{{activity.hour}}</span>
 							</div>
 							<div class="price"><span class="tile-price">{{activity.prix}} €</span></div>
-							<?php if($_SESSION['power'] == 1) { ?>
+							<?php if($power == 1) { ?>
 								<div class="nbSub"><span class="tile-nbSub">{{activity.nbSub}} {{activity.subText}}</span></div>
 							<?php } ?>
 						</div>
