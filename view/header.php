@@ -68,8 +68,8 @@
                             <?php
                             } else {?>
 
-                                <a href="home.php?action=connect">Sign up</a>
-                                <a href="home.php?action=subscribe">Sign in</a>
+                                <a href="home.php?action=connect">Sign in</a>
+                                <a href="home.php?action=subscribe">Sign up</a>
 
                             <?php 
                             } 
