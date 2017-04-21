@@ -1,6 +1,5 @@
 <?php
 session_start(); 
-require "header.php";
 
 if (isset($_SESSION['id'])) {
 	header('Location: index.php');
@@ -11,6 +10,8 @@ if (isset($_SESSION['id'])) {
 else{
 	//header('Location: index.php');
 }
+
+require "header.php";
 
 ?>
 
