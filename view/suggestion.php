@@ -16,7 +16,7 @@ require 'header.php';
 	<form action="../controller/Suggestion_Controller.php" method="POST">
 		<input type="text" name="id_user" value="<?php echo $_SESSION['id']; ?>" style="display:none;">
 		<textarea class="text-box" name="content" cols="50" rows="10"></textarea>
-		<input class="btn-login" value="Ajouter la suggestion" type="submit" name="btn">
+		<input class="btn-login-suggest" value="Ajouter la suggestion" type="submit" name="btn">
 	</form>
 </div>
 
