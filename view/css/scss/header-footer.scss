@@ -361,6 +361,24 @@ footer {
 	padding-left: 40px;
 	background-color: white;
 }
+.container .btn-login {
+  width: 150px;
+  padding: 15px 40px;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  background-color: #2ECC71; }
+
+.btn-login-suggest {
+  line-height: 25px;
+  width: 300px;
+  height: 25px;
+  padding: 0px 40px;
+  margin: 55px 40px;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  background-color: #2ECC71; }
 
 .form-email::before{
 	position: absolute;
@@ -406,9 +424,23 @@ footer {
 	
 }
 
+.container-suggestion {
+  margin-top: 50px;
+  width: 540px;
+  height: 340px;
+  text-align: center;
+  background-color: #C2242A;
+  opacity: 0.9;
+  margin: 40px auto;
+  border-radius: 4px; }
 
 
+.text-box {
+  resize: none;
+  height: 100%;
+  margin: 25px 0px; }
 
-
-
-
+.text-box-comment {
+  display: block;
+  resize: none;
+  height: 300px; }
